@@ -32,8 +32,9 @@
 	};
 
 	type ParsedPaste = { kind: ScheduleKind; timetable: Timetable };
-	type Paste = { raw: string; parsed?: ParsedPaste; error?: Error };
-	let pastes: Paste[] = [{ raw: '' }];
+	type Paste = { parsed?: ParsedPaste; error?: Error };
+	const pageBreak = '\n\f\n';
+	let raw = '';
 	let output: 'ical' | 'gapi' = 'gapi';
 	let exported: Timetable | undefined;
 	let semester: number | undefined;
@@ -42,25 +43,35 @@
 	let reminders = [1440, 60];
 
 	function parsePaste(raw: string): Paste {
-		if (!raw.trim()) return { raw };
+		if (!raw.trim()) return {};
 		try {
 			const normalized = raw.replace(/\r\n?/g, '\n').normalize('NFC');
 			const kind = detectKind(normalized);
 			const timetable = parsers[kind](normalized);
 			timetable.metadata = { ...timetable.metadata, ...extractMeta(normalized) };
-			return { raw, parsed: { kind, timetable } };
+			return { parsed: { kind, timetable } };
 		} catch (error) {
-			return { raw, error: error as Error };
+			return { error: error as Error };
 		}
 	}
 
-	function updatePaste(index: number, raw: string) {
-		const updated = [...pastes];
-		updated[index] = parsePaste(raw);
-		const last = updated.findLastIndex((paste) => paste.raw !== '');
-		const visible = updated.slice(0, Math.max(1, last + 1));
-		if (visible.at(-1)?.parsed) visible.push({ raw: '' });
-		pastes = visible;
+	function appendPage(event: ClipboardEvent & { currentTarget: HTMLTextAreaElement }) {
+		const field = event.currentTarget;
+		const pasted = event.clipboardData?.getData('text/plain');
+		const end = field.value.length;
+		if (
+			!pastes.at(-1)?.parsed ||
+			field.selectionStart !== end ||
+			field.selectionEnd !== end ||
+			!pasted ||
+			!parsePaste(pasted).parsed
+		) {
+			return;
+		}
+
+		event.preventDefault();
+		field.setRangeText(pageBreak + pasted.replace(/\r\n?/g, '\n'), end, end, 'end');
+		raw = field.value;
 	}
 
 	function combine(results: Paste[]) {
@@ -75,6 +86,7 @@
 		}
 	}
 
+	$: pastes = raw.split(pageBreak).map(parsePaste);
 	$: combined = combine(pastes);
 	$: semester = combined.timetable?.semester;
 	$: pagination = combined.timetable?.metadata?.pagination;
@@ -125,31 +137,19 @@
 			🪄
 		</p>
 		<div class="h-4" />
-		{#each pastes as paste, index}
-			{#if index > 0}
-				<label for={'schedule-' + index} class="mt-4 block"> Dán thêm trang hoặc lịch thi </label>
-			{/if}
-			<PasteArea
-				id={'schedule-' + index}
-				raw={paste.raw}
-				onInput={(raw) => updatePaste(index, raw)}
-			/>
-			{#if index === 0}
-				{#if combined.timetable?.metadata?.studentName}
-					<p class="mt-3 inline-block rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-900">
-						{combined.timetable.metadata.studentName}
-					</p>
-				{/if}
-				{#if pagination && ((pagination.shownFrom ?? 1) > 1 || pagination.shown < pagination.total)}
-					<p role="status" class="bg-amber-50 text-amber-900 mt-3 rounded p-2 text-sm">
-						Đã dán {pagination.shownFrom && pagination.shownFrom > 1
-							? pagination.shownFrom + '–'
-							: ''}{pagination.shown} / {pagination.total} dòng. Bạn có thể thêm các trang còn lại bên
-						dưới.
-					</p>
-				{/if}
-			{/if}
-		{/each}
+		<PasteArea bind:raw onPaste={appendPage} />
+		{#if combined.timetable?.metadata?.studentName}
+			<p class="mt-3 inline-block rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-900">
+				{combined.timetable.metadata.studentName}
+			</p>
+		{/if}
+		{#if pagination && ((pagination.shownFrom ?? 1) > 1 || pagination.shown < pagination.total)}
+			<p role="status" class="bg-amber-50 text-amber-900 mt-3 rounded p-2 text-sm">
+				Đã dán {pagination.shownFrom && pagination.shownFrom > 1
+					? pagination.shownFrom + '–'
+					: ''}{pagination.shown} / {pagination.total} dòng. Bạn có thể thêm các trang còn lại bên dưới.
+			</p>
+		{/if}
 		<div class="h-4" />
 		<div class="flex items-center justify-end space-x-4">
 			<label for="semester" class="flex-shrink-0">học kỳ</label>

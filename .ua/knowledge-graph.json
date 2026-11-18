@@ -14,8 +14,8 @@
       "Vitest"
     ],
     "description": "Converts HCMUT myBK class timetables and exam schedules into personal calendars.",
-    "analyzedAt": "2026-11-18T06:46:42.346Z",
-    "gitCommitHash": "860794527ca3eec0413196be4bb4bded8ce8d8f3"
+    "analyzedAt": "2026-11-18T06:59:58.006Z",
+    "gitCommitHash": "ad8c0dbed774006ecb8c618af0695c1bf7fa8983"
   },
   "nodes": [
     {
@@ -1659,8 +1659,8 @@
       "name": "parsePaste",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        44,
-        55
+        45,
+        56
       ],
       "summary": "Handles parse paste in +page.svelte.",
       "tags": [
@@ -1669,15 +1669,15 @@
       "complexity": "low"
     },
     {
-      "id": "function:src/routes/+page.svelte:updatePaste",
+      "id": "function:src/routes/+page.svelte:appendPage",
       "type": "function",
-      "name": "updatePaste",
+      "name": "appendPage",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        57,
-        64
+        58,
+        75
       ],
-      "summary": "Handles update paste in +page.svelte.",
+      "summary": "Handles append page in +page.svelte.",
       "tags": [
         "interface"
       ],
@@ -1689,8 +1689,8 @@
       "name": "combine",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        66,
-        76
+        77,
+        87
       ],
       "summary": "Handles combine in +page.svelte.",
       "tags": [
@@ -1704,8 +1704,8 @@
       "name": "next",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        85,
-        108
+        97,
+        120
       ],
       "summary": "Handles next in +page.svelte.",
       "tags": [
@@ -2995,7 +2995,7 @@
     },
     {
       "source": "file:src/routes/+page.svelte",
-      "target": "function:src/routes/+page.svelte:updatePaste",
+      "target": "function:src/routes/+page.svelte:appendPage",
       "type": "contains",
       "direction": "forward",
       "weight": 1
@@ -4069,15 +4069,15 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 48
+      "line": 49
     },
     {
-      "source": "function:src/routes/+page.svelte:updatePaste",
+      "source": "function:src/routes/+page.svelte:appendPage",
       "target": "function:src/routes/+page.svelte:parsePaste",
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 59
+      "line": 67
     },
     {
       "source": "function:src/routes/+page.svelte:combine",
@@ -4085,7 +4085,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 70
+      "line": 81
     },
     {
       "source": "file:src/routes/+page.svelte",
@@ -4093,7 +4093,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 78
+      "line": 90
     },
     {
       "source": "function:src/routes/+page.svelte:next",
@@ -4101,7 +4101,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 92
+      "line": 104
     },
     {
       "source": "file:src/routes/GapiOutputSection.svelte",
@@ -4829,7 +4829,7 @@
     {
       "order": 1,
       "title": "Paste and detect",
-      "description": "The home route accepts several blocks and lets the user override detection for each paste.",
+      "description": "The home route detects schedules in a single paste field and can combine pages pasted at its end.",
       "nodeIds": [
         "document:README.md",
         "file:src/routes/+page.svelte",
