@@ -20,3 +20,11 @@
 		buổi thi đó được gửi tới Lịch Google để bạn tự lưu.
 	</p>
 </div>
+
+<section class="mt-6 space-y-2 text-sm">
+	<h2 class="text-lg font-bold">Giới thiệu dự án</h2>
+	<p>
+		BKalendar x Oxazite là bản tùy chỉnh của BKalendar, được thực hiện để phù hợp với nhu cầu sử
+		dụng cá nhân của mình. Mình chia sẻ bản tùy chỉnh này miễn phí như một dự án phi thương mại.
+	</p>
+</section>

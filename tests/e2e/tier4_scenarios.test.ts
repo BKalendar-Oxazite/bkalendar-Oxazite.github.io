@@ -255,7 +255,10 @@ describe('Tier 4 — Real-World Application Scenarios (S4-01..S4-06)', () => {
 		expect(shell.default.render().html).toContain('Oxazite');
 
 		const privacyPage = await loadRouteModule<SvelteComponentModule>('privacy/+page.svelte');
-		expect(privacyPage.default.render().html).toMatch(/Google Calendar|trình duyệt|client/i);
+		const privacyHtml = privacyPage.default.render().html;
+		expect(privacyHtml).toMatch(/Google Calendar|trình duyệt|client/i);
+		expect(privacyHtml).toContain('Giới thiệu dự án');
+		expect(privacyHtml).toContain('phi thương mại');
 
 		const srcFiles = collectFilesRecursive('src');
 		expect(srcFiles.length).toBeGreaterThan(0);
@@ -272,7 +275,8 @@ describe('Tier 4 — Real-World Application Scenarios (S4-01..S4-06)', () => {
 				workspaceExists('build/privacy.html') || workspaceExists('build/privacy/index.html');
 			expect(hasPrivacy).toBe(true);
 			const builtHtml = readWorkspaceText('build/index.html');
-			expect(builtHtml).not.toContain('/bkalendar.github.io/');
+			expect(builtHtml).toContain('href="https://bkalendar.github.io/"');
+			expect(builtHtml).not.toMatch(/["']\/bkalendar\.github\.io\//);
 			for (const bFile of collectFilesRecursive('build', ['.html', '.js'])) {
 				const content = readWorkspaceText(bFile);
 				expect(content).not.toMatch(/GOCSPX-|client_secret/i);
