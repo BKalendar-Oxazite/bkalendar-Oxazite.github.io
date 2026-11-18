@@ -773,7 +773,7 @@ describe('Tier 1 — Feature Coverage (Features #1–#12)', () => {
 			const files = [...collectFilesRecursive('src'), ...collectFilesRecursive('.github')];
 			expect(files.length).toBeGreaterThan(0);
 			for (const file of files) {
-				const content = readWorkspaceText(file.replace(/^.*?bkalendar-Oxazite[\\/]/, ''));
+				const content = readWorkspaceText(file);
 				expect(content).not.toMatch(/GOCSPX-/);
 				expect(content).not.toMatch(/client_secret/i);
 			}

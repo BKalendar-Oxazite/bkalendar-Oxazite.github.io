@@ -45,7 +45,7 @@ describe('Tier 2 — Boundary & Corner Cases (Features #1–#12)', () => {
 			const coreFiles = collectFilesRecursive('src/lib/core', ['.ts']);
 			expect(coreFiles.length).toBeGreaterThan(0);
 			for (const file of coreFiles) {
-				const text = readWorkspaceText(file.replace(/^.*?bkalendar-Oxazite[\\/]/, ''));
+				const text = readWorkspaceText(file);
 				expect(text).not.toMatch(/\bDeno\.|jsr:|https:\/\/deno\.land\/|@std\//);
 			}
 		});
@@ -858,7 +858,7 @@ describe('Tier 2 — Boundary & Corner Cases (Features #1–#12)', () => {
 			const e2eFiles = collectFilesRecursive('tests/e2e', ['.ts']);
 			for (const file of e2eFiles) {
 				if (file.endsWith('tier2_boundaries.test.ts')) continue;
-				const content = readWorkspaceText(file.replace(/^.*?bkalendar-Oxazite[\\/]/, ''));
+				const content = readWorkspaceText(file);
 				expect(content).not.toMatch(/recon[\\/]/);
 			}
 		});

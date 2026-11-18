@@ -260,7 +260,7 @@ describe('Tier 4 — Real-World Application Scenarios (S4-01..S4-06)', () => {
 		const srcFiles = collectFilesRecursive('src');
 		expect(srcFiles.length).toBeGreaterThan(0);
 		for (const file of srcFiles) {
-			const content = readWorkspaceText(file.replace(/^.*?bkalendar-Oxazite[\\/]/, ''));
+			const content = readWorkspaceText(file);
 			expect(content).not.toMatch(/GOCSPX-|client_secret/i);
 		}
 
@@ -274,7 +274,7 @@ describe('Tier 4 — Real-World Application Scenarios (S4-01..S4-06)', () => {
 			const builtHtml = readWorkspaceText('build/index.html');
 			expect(builtHtml).not.toContain('/bkalendar.github.io/');
 			for (const bFile of collectFilesRecursive('build', ['.html', '.js'])) {
-				const content = readWorkspaceText(bFile.replace(/^.*?bkalendar-Oxazite[\\/]/, ''));
+				const content = readWorkspaceText(bFile);
 				expect(content).not.toMatch(/GOCSPX-|client_secret/i);
 			}
 		}

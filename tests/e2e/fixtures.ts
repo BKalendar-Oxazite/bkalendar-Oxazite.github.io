@@ -267,7 +267,7 @@ export function collectFilesRecursive(dirRel: string, exts?: string[]): string[]
 			if (entry.isDirectory()) {
 				walk(full);
 			} else if (!exts || exts.some((ext) => entry.name.endsWith(ext))) {
-				out.push(full);
+				out.push(path.relative(WORKSPACE_ROOT, full));
 			}
 		}
 	};
