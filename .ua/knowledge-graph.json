@@ -1,0 +1,4858 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "BKalendar x Oxazite",
+    "languages": [
+      "TypeScript",
+      "Svelte",
+      "CSS",
+      "YAML"
+    ],
+    "frameworks": [
+      "SvelteKit",
+      "Tailwind CSS",
+      "Vitest"
+    ],
+    "description": "Converts HCMUT myBK class timetables and exam schedules into personal calendars.",
+    "analyzedAt": "2026-11-18T05:25:47.238Z",
+    "gitCommitHash": "9727ac04c696766efbb6882eadfcb34f8779aa5f"
+  },
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/main.yml",
+      "type": "pipeline",
+      "name": "main.yml",
+      "filePath": ".github/workflows/main.yml",
+      "summary": "Runs dependency, type, test, and build gates before GitHub Pages deployment.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:.gitignore",
+      "type": "config",
+      "name": ".gitignore",
+      "filePath": ".gitignore",
+      "summary": "Supports build and delivery through .gitignore.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:.npmrc",
+      "type": "config",
+      "name": ".npmrc",
+      "filePath": ".npmrc",
+      "summary": "Supports build and delivery through .npmrc.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:.prettierignore",
+      "type": "config",
+      "name": ".prettierignore",
+      "filePath": ".prettierignore",
+      "summary": "Supports build and delivery through .prettierignore.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:.prettierrc",
+      "type": "config",
+      "name": ".prettierrc",
+      "filePath": ".prettierrc",
+      "summary": "Supports build and delivery through .prettierrc.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "document:LICENSE-bkalendar.github.io",
+      "type": "document",
+      "name": "LICENSE-bkalendar.github.io",
+      "filePath": "LICENSE-bkalendar.github.io",
+      "summary": "Supports build and delivery through LICENSE-bkalendar.github.io.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "document:LICENSE-core",
+      "type": "document",
+      "name": "LICENSE-core",
+      "filePath": "LICENSE-core",
+      "summary": "Supports build and delivery through LICENSE-core.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Describes the application, local commands, and hosting configuration.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Supports build and delivery through package.json.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:pnpm-workspace.yaml",
+      "type": "config",
+      "name": "pnpm-workspace.yaml",
+      "filePath": "pnpm-workspace.yaml",
+      "summary": "Supports build and delivery through pnpm-workspace.yaml.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:postcss.config.cjs",
+      "type": "config",
+      "name": "postcss.config.cjs",
+      "filePath": "postcss.config.cjs",
+      "summary": "Supports build and delivery through postcss.config.cjs.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/app.d.ts",
+      "type": "file",
+      "name": "app.d.ts",
+      "filePath": "src/app.d.ts",
+      "summary": "Supports browser interface through app.d.ts.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/app.html",
+      "type": "file",
+      "name": "app.html",
+      "filePath": "src/app.html",
+      "summary": "HTML shell, Vietnamese locale, metadata, and SvelteKit insertion points.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/app.postcss",
+      "type": "file",
+      "name": "app.postcss",
+      "filePath": "src/app.postcss",
+      "summary": "Supports browser interface through app.postcss.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/H2.svelte",
+      "type": "file",
+      "name": "H2.svelte",
+      "filePath": "src/lib/H2.svelte",
+      "summary": "Supports browser interface through H2.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/Key.svelte",
+      "type": "file",
+      "name": "Key.svelte",
+      "filePath": "src/lib/Key.svelte",
+      "summary": "Supports browser interface through Key.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/OkeeButton.svelte",
+      "type": "file",
+      "name": "OkeeButton.svelte",
+      "filePath": "src/lib/OkeeButton.svelte",
+      "summary": "Supports browser interface through OkeeButton.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/colors.ts",
+      "type": "file",
+      "name": "colors.ts",
+      "filePath": "src/lib/colors.ts",
+      "summary": "Assigns upstream Google Calendar colors through random and course-based modes.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/constants.ts",
+      "type": "file",
+      "name": "constants.ts",
+      "filePath": "src/lib/core/constants.ts",
+      "summary": "Shares duration constants and the Ho Chi Minh City time-zone name.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/detect.ts",
+      "type": "file",
+      "name": "detect.ts",
+      "filePath": "src/lib/core/detect.ts",
+      "summary": "Recognizes table formats and combines parsed events and pagination coverage.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/formatter/gapi.ts",
+      "type": "file",
+      "name": "gapi.ts",
+      "filePath": "src/lib/core/formatter/gapi.ts",
+      "summary": "Builds Google Calendar API event payloads and individual exam URLs.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/formatter/ical.ts",
+      "type": "file",
+      "name": "ical.ts",
+      "filePath": "src/lib/core/formatter/ical.ts",
+      "summary": "Serializes calendar scopes, weekly recurrence rules, and exam reminders.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/formatter/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "summary": "Converts local academic times to UTC and builds readable exam text.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "src/lib/core/mod.ts",
+      "summary": "Public entry point for the vendored parsers, resolver, and formatters.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/parser/errors.ts",
+      "type": "file",
+      "name": "errors.ts",
+      "filePath": "src/lib/core/parser/errors.ts",
+      "summary": "Defines structured failures shared across schedule parsers.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/parser/exam_2024.ts",
+      "type": "file",
+      "name": "exam_2024.ts",
+      "filePath": "src/lib/core/parser/exam_2024.ts",
+      "summary": "Parses modern myBK exam tables and calculates exact exam start and end times.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/parser/lecturer.ts",
+      "type": "file",
+      "name": "lecturer.ts",
+      "filePath": "src/lib/core/parser/lecturer.ts",
+      "summary": "Parses lecturer timetable rows.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/parser/postgrad.ts",
+      "type": "file",
+      "name": "postgrad.ts",
+      "filePath": "src/lib/core/parser/postgrad.ts",
+      "summary": "Parses postgraduate timetable rows.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/parser/student.ts",
+      "type": "file",
+      "name": "student.ts",
+      "filePath": "src/lib/core/parser/student.ts",
+      "summary": "Parses legacy student timetable rows.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/parser/student_2024.ts",
+      "type": "file",
+      "name": "student_2024.ts",
+      "filePath": "src/lib/core/parser/student_2024.ts",
+      "summary": "Parses modern myBK class tables and ignores entries with no scheduled time.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/parser/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "src/lib/core/parser/utils.ts",
+      "summary": "Extracts tabbed or newline-separated table rows and parses local times.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/resolver.ts",
+      "type": "file",
+      "name": "resolver.ts",
+      "filePath": "src/lib/core/resolver.ts",
+      "summary": "Derives an ISO-week reference Monday for recurring classes.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/core/timetable.ts",
+      "type": "file",
+      "name": "timetable.ts",
+      "filePath": "src/lib/core/timetable.ts",
+      "summary": "Defines recurring rows, exact-date exams, paste metadata, and schedules.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/google.ts",
+      "type": "file",
+      "name": "google.ts",
+      "filePath": "src/lib/google.ts",
+      "summary": "Loads GIS and GAPI, obtains the app-created-calendar scope, and creates calendars and events.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/+layout.svelte",
+      "type": "file",
+      "name": "+layout.svelte",
+      "filePath": "src/routes/+layout.svelte",
+      "summary": "Compact page shell with Arimo and the privacy link.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/+layout.ts",
+      "type": "file",
+      "name": "+layout.ts",
+      "filePath": "src/routes/+layout.ts",
+      "summary": "Prerenders the app and produces directory indexes for static hosting.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/+page.svelte",
+      "type": "file",
+      "name": "+page.svelte",
+      "filePath": "src/routes/+page.svelte",
+      "summary": "Collects paste blocks, selects parsers, merges schedules, and controls export.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/BKalendar.svelte",
+      "type": "file",
+      "name": "BKalendar.svelte",
+      "filePath": "src/routes/BKalendar.svelte",
+      "summary": "Displays the upstream BKalendar wordmark.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/ErrorReport.svelte",
+      "type": "file",
+      "name": "ErrorReport.svelte",
+      "filePath": "src/routes/ErrorReport.svelte",
+      "summary": "Explains parse and scheduling failures in Vietnamese.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/ExamPreview.svelte",
+      "type": "file",
+      "name": "ExamPreview.svelte",
+      "filePath": "src/routes/ExamPreview.svelte",
+      "summary": "Displays sorted exam cards with times, locations, and event links.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/GapiOutputSection.svelte",
+      "type": "file",
+      "name": "GapiOutputSection.svelte",
+      "filePath": "src/routes/GapiOutputSection.svelte",
+      "summary": "Controls event styling and sends resumable calendar imports.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/GapiPreview.svelte",
+      "type": "file",
+      "name": "GapiPreview.svelte",
+      "filePath": "src/routes/GapiPreview.svelte",
+      "summary": "Computes the recurring weekly grid in Ho Chi Minh City time.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/IcalOutputSection.svelte",
+      "type": "file",
+      "name": "IcalOutputSection.svelte",
+      "filePath": "src/routes/IcalOutputSection.svelte",
+      "summary": "Downloads combined or split calendar files from browser memory.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/KindSelect.svelte",
+      "type": "file",
+      "name": "KindSelect.svelte",
+      "filePath": "src/routes/KindSelect.svelte",
+      "summary": "Supports browser interface through KindSelect.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/NameInput.svelte",
+      "type": "file",
+      "name": "NameInput.svelte",
+      "filePath": "src/routes/NameInput.svelte",
+      "summary": "Edits the calendar name before export.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/OutputSelect.svelte",
+      "type": "file",
+      "name": "OutputSelect.svelte",
+      "filePath": "src/routes/OutputSelect.svelte",
+      "summary": "Switches between Google Calendar and iCalendar export.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/PasteArea.svelte",
+      "type": "file",
+      "name": "PasteArea.svelte",
+      "filePath": "src/routes/PasteArea.svelte",
+      "summary": "Supports browser interface through PasteArea.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/routes/privacy/+page.svelte",
+      "type": "file",
+      "name": "+page.svelte",
+      "filePath": "src/routes/privacy/+page.svelte",
+      "summary": "Explains when information stays in the browser and when it goes to Google.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "resource:static/favicon.svg",
+      "type": "resource",
+      "name": "favicon.svg",
+      "filePath": "static/favicon.svg",
+      "summary": "Supports browser interface through favicon.svg.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:svelte.config.js",
+      "type": "config",
+      "name": "svelte.config.js",
+      "filePath": "svelte.config.js",
+      "summary": "Supports build and delivery through svelte.config.js.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:tailwind.config.cjs",
+      "type": "config",
+      "name": "tailwind.config.cjs",
+      "filePath": "tailwind.config.cjs",
+      "summary": "Supports build and delivery through tailwind.config.cjs.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/e2e/fixtures.ts",
+      "type": "file",
+      "name": "fixtures.ts",
+      "filePath": "tests/e2e/fixtures.ts",
+      "summary": "Defines public-safe paste fixtures and exercises the public core entry points.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/e2e/tier1_features.test.ts",
+      "type": "file",
+      "name": "tier1_features.test.ts",
+      "filePath": "tests/e2e/tier1_features.test.ts",
+      "summary": "Verifies tier1 features behavior.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/e2e/tier2_boundaries.test.ts",
+      "type": "file",
+      "name": "tier2_boundaries.test.ts",
+      "filePath": "tests/e2e/tier2_boundaries.test.ts",
+      "summary": "Verifies tier2 boundaries behavior.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/e2e/tier3_combinations.test.ts",
+      "type": "file",
+      "name": "tier3_combinations.test.ts",
+      "filePath": "tests/e2e/tier3_combinations.test.ts",
+      "summary": "Verifies tier3 combinations behavior.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/e2e/tier4_scenarios.test.ts",
+      "type": "file",
+      "name": "tier4_scenarios.test.ts",
+      "filePath": "tests/e2e/tier4_scenarios.test.ts",
+      "summary": "Verifies tier4 scenarios behavior.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/unit/core.test.ts",
+      "type": "file",
+      "name": "core.test.ts",
+      "filePath": "tests/unit/core.test.ts",
+      "summary": "Verifies core behavior.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:tests/unit/foundation.test.ts",
+      "type": "file",
+      "name": "foundation.test.ts",
+      "filePath": "tests/unit/foundation.test.ts",
+      "summary": "Verifies foundation behavior.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "Supports build and delivery through tsconfig.json.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "config:vite.config.js",
+      "type": "config",
+      "name": "vite.config.js",
+      "filePath": "vite.config.js",
+      "summary": "Supports build and delivery through vite.config.js.",
+      "tags": [
+        "delivery"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/colors.ts:eventColor",
+      "type": "function",
+      "name": "eventColor",
+      "filePath": "src/lib/colors.ts",
+      "lineRange": [
+        24,
+        26
+      ],
+      "summary": "Handles event color in colors.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/colors.ts:courseColorIds",
+      "type": "function",
+      "name": "courseColorIds",
+      "filePath": "src/lib/colors.ts",
+      "lineRange": [
+        28,
+        40
+      ],
+      "summary": "Handles course color ids in colors.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/colors.ts:randomColorIds",
+      "type": "function",
+      "name": "randomColorIds",
+      "filePath": "src/lib/colors.ts",
+      "lineRange": [
+        42,
+        77
+      ],
+      "summary": "Handles random color ids in colors.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/detect.ts:normalizeHeaderCell",
+      "type": "function",
+      "name": "normalizeHeaderCell",
+      "filePath": "src/lib/core/detect.ts",
+      "lineRange": [
+        7,
+        15
+      ],
+      "summary": "Handles normalize header cell in detect.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/detect.ts:detectKind",
+      "type": "function",
+      "name": "detectKind",
+      "filePath": "src/lib/core/detect.ts",
+      "lineRange": [
+        98,
+        130
+      ],
+      "summary": "Handles detect kind in detect.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/detect.ts:extractMeta",
+      "type": "function",
+      "name": "extractMeta",
+      "filePath": "src/lib/core/detect.ts",
+      "lineRange": [
+        132,
+        177
+      ],
+      "summary": "Handles extract meta in detect.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/detect.ts:rowSignature",
+      "type": "function",
+      "name": "rowSignature",
+      "filePath": "src/lib/core/detect.ts",
+      "lineRange": [
+        179,
+        189
+      ],
+      "summary": "Handles row signature in detect.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/detect.ts:examSignature",
+      "type": "function",
+      "name": "examSignature",
+      "filePath": "src/lib/core/detect.ts",
+      "lineRange": [
+        191,
+        200
+      ],
+      "summary": "Handles exam signature in detect.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/detect.ts:isTruncatedPagination",
+      "type": "function",
+      "name": "isTruncatedPagination",
+      "filePath": "src/lib/core/detect.ts",
+      "lineRange": [
+        204,
+        206
+      ],
+      "summary": "Handles is truncated pagination in detect.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/detect.ts:mergePaginationGroup",
+      "type": "function",
+      "name": "mergePaginationGroup",
+      "filePath": "src/lib/core/detect.ts",
+      "lineRange": [
+        208,
+        245
+      ],
+      "summary": "Handles merge pagination group in detect.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/detect.ts:mergeTimetables",
+      "type": "function",
+      "name": "mergeTimetables",
+      "filePath": "src/lib/core/detect.ts",
+      "lineRange": [
+        247,
+        348
+      ],
+      "summary": "Handles merge timetables in detect.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "type": "function",
+      "name": "formatGapiSplit",
+      "filePath": "src/lib/core/formatter/gapi.ts",
+      "lineRange": [
+        39,
+        111
+      ],
+      "summary": "Handles format gapi split in gapi.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/core/formatter/gapi.ts:formatGapi",
+      "type": "function",
+      "name": "formatGapi",
+      "filePath": "src/lib/core/formatter/gapi.ts",
+      "lineRange": [
+        113,
+        116
+      ],
+      "summary": "Handles format gapi in gapi.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/gapi.ts:formatGoogleCalendarTemplateUrl",
+      "type": "function",
+      "name": "formatGoogleCalendarTemplateUrl",
+      "filePath": "src/lib/core/formatter/gapi.ts",
+      "lineRange": [
+        118,
+        129
+      ],
+      "summary": "Handles format google calendar template url in gapi.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/ical.ts:escapeIcalText",
+      "type": "function",
+      "name": "escapeIcalText",
+      "filePath": "src/lib/core/formatter/ical.ts",
+      "lineRange": [
+        20,
+        22
+      ],
+      "summary": "Handles escape ical text in ical.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/ical.ts:formatIcal",
+      "type": "function",
+      "name": "formatIcal",
+      "filePath": "src/lib/core/formatter/ical.ts",
+      "lineRange": [
+        28,
+        68
+      ],
+      "summary": "Handles format ical in ical.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/ical.ts:formatTimerow",
+      "type": "function",
+      "name": "formatTimerow",
+      "filePath": "src/lib/core/formatter/ical.ts",
+      "lineRange": [
+        70,
+        94
+      ],
+      "summary": "Handles format timerow in ical.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "type": "function",
+      "name": "formatExamVevent",
+      "filePath": "src/lib/core/formatter/ical.ts",
+      "lineRange": [
+        96,
+        126
+      ],
+      "summary": "Handles format exam vevent in ical.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/ical.ts:icalRrule",
+      "type": "function",
+      "name": "icalRrule",
+      "filePath": "src/lib/core/formatter/ical.ts",
+      "lineRange": [
+        131,
+        170
+      ],
+      "summary": "Handles ical rrule in ical.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:dateOfIndex",
+      "type": "function",
+      "name": "dateOfIndex",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        30,
+        40
+      ],
+      "summary": "Handles date of index in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:hcmDateToUtc",
+      "type": "function",
+      "name": "hcmDateToUtc",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        42,
+        51
+      ],
+      "summary": "Handles hcm date to utc in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:examEndDateUtc",
+      "type": "function",
+      "name": "examEndDateUtc",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        53,
+        59
+      ],
+      "summary": "Handles exam end date utc in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:extractParts",
+      "type": "function",
+      "name": "extractParts",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        61,
+        70
+      ],
+      "summary": "Handles extract parts in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:formatUTC",
+      "type": "function",
+      "name": "formatUTC",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        77,
+        80
+      ],
+      "summary": "Handles format utc in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:formatHCM",
+      "type": "function",
+      "name": "formatHCM",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        87,
+        90
+      ],
+      "summary": "Handles format hcm in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:formatHCMRfc3339",
+      "type": "function",
+      "name": "formatHCMRfc3339",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        92,
+        95
+      ],
+      "summary": "Handles format hcmrfc3339 in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:isBlankExamField",
+      "type": "function",
+      "name": "isBlankExamField",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        97,
+        100
+      ],
+      "summary": "Handles is blank exam field in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:formatExamLocation",
+      "type": "function",
+      "name": "formatExamLocation",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        102,
+        109
+      ],
+      "summary": "Handles format exam location in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:formatExamSummary",
+      "type": "function",
+      "name": "formatExamSummary",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        111,
+        113
+      ],
+      "summary": "Handles format exam summary in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/formatter/utils.ts:formatExamDescription",
+      "type": "function",
+      "name": "formatExamDescription",
+      "filePath": "src/lib/core/formatter/utils.ts",
+      "lineRange": [
+        115,
+        133
+      ],
+      "summary": "Handles format exam description in utils.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "class:src/lib/core/parser/errors.ts:ParseError",
+      "type": "class",
+      "name": "ParseError",
+      "filePath": "src/lib/core/parser/errors.ts",
+      "lineRange": [
+        1,
+        8
+      ],
+      "summary": "Handles parse error in errors.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "class:src/lib/core/parser/errors.ts:SemesterNotFoundError",
+      "type": "class",
+      "name": "SemesterNotFoundError",
+      "filePath": "src/lib/core/parser/errors.ts",
+      "lineRange": [
+        10,
+        14
+      ],
+      "summary": "Handles semester not found error in errors.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "class:src/lib/core/parser/errors.ts:NumOfColumnMismatchError",
+      "type": "class",
+      "name": "NumOfColumnMismatchError",
+      "filePath": "src/lib/core/parser/errors.ts",
+      "lineRange": [
+        16,
+        24
+      ],
+      "summary": "Handles num of column mismatch error in errors.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "class:src/lib/core/parser/errors.ts:TableNotFoundError",
+      "type": "class",
+      "name": "TableNotFoundError",
+      "filePath": "src/lib/core/parser/errors.ts",
+      "lineRange": [
+        26,
+        30
+      ],
+      "summary": "Handles table not found error in errors.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/exam_2024.ts:parseExam2024",
+      "type": "function",
+      "name": "parseExam2024",
+      "filePath": "src/lib/core/parser/exam_2024.ts",
+      "lineRange": [
+        20,
+        96
+      ],
+      "summary": "Handles parse exam2024 in exam_2024.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/core/parser/lecturer.ts:parseLecturer",
+      "type": "function",
+      "name": "parseLecturer",
+      "filePath": "src/lib/core/parser/lecturer.ts",
+      "lineRange": [
+        13,
+        38
+      ],
+      "summary": "Handles parse lecturer in lecturer.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/lecturer.ts:parseFromHeader",
+      "type": "function",
+      "name": "parseFromHeader",
+      "filePath": "src/lib/core/parser/lecturer.ts",
+      "lineRange": [
+        40,
+        82
+      ],
+      "summary": "Handles parse from header in lecturer.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/postgrad.ts:parsePostgrad",
+      "type": "function",
+      "name": "parsePostgrad",
+      "filePath": "src/lib/core/parser/postgrad.ts",
+      "lineRange": [
+        24,
+        32
+      ],
+      "summary": "Handles parse postgrad in postgrad.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/postgrad.ts:parseFromHeader",
+      "type": "function",
+      "name": "parseFromHeader",
+      "filePath": "src/lib/core/parser/postgrad.ts",
+      "lineRange": [
+        34,
+        89
+      ],
+      "summary": "Handles parse from header in postgrad.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/core/parser/student.ts:parseStudent",
+      "type": "function",
+      "name": "parseStudent",
+      "filePath": "src/lib/core/parser/student.ts",
+      "lineRange": [
+        14,
+        23
+      ],
+      "summary": "Handles parse student in student.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/student.ts:parseFromHeader",
+      "type": "function",
+      "name": "parseFromHeader",
+      "filePath": "src/lib/core/parser/student.ts",
+      "lineRange": [
+        25,
+        78
+      ],
+      "summary": "Handles parse from header in student.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/core/parser/student_2024.ts:parseSemesterCode",
+      "type": "function",
+      "name": "parseSemesterCode",
+      "filePath": "src/lib/core/parser/student_2024.ts",
+      "lineRange": [
+        20,
+        26
+      ],
+      "summary": "Handles parse semester code in student_2024.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/student_2024.ts:isSelectMegaLine",
+      "type": "function",
+      "name": "isSelectMegaLine",
+      "filePath": "src/lib/core/parser/student_2024.ts",
+      "lineRange": [
+        28,
+        39
+      ],
+      "summary": "Handles is select mega line in student_2024.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/student_2024.ts:extractSemester2024",
+      "type": "function",
+      "name": "extractSemester2024",
+      "filePath": "src/lib/core/parser/student_2024.ts",
+      "lineRange": [
+        41,
+        77
+      ],
+      "summary": "Handles extract semester2024 in student_2024.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/student_2024.ts:parseStudent2024",
+      "type": "function",
+      "name": "parseStudent2024",
+      "filePath": "src/lib/core/parser/student_2024.ts",
+      "lineRange": [
+        79,
+        135
+      ],
+      "summary": "Handles parse student2024 in student_2024.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/core/parser/utils.ts:parseTime",
+      "type": "function",
+      "name": "parseTime",
+      "filePath": "src/lib/core/parser/utils.ts",
+      "lineRange": [
+        3,
+        23
+      ],
+      "summary": "Handles parse time in utils.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/utils.ts:hmFrom",
+      "type": "function",
+      "name": "hmFrom",
+      "filePath": "src/lib/core/parser/utils.ts",
+      "lineRange": [
+        25,
+        63
+      ],
+      "summary": "Handles hm from in utils.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/utils.ts:parseExamTime",
+      "type": "function",
+      "name": "parseExamTime",
+      "filePath": "src/lib/core/parser/utils.ts",
+      "lineRange": [
+        65,
+        76
+      ],
+      "summary": "Handles parse exam time in utils.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/utils.ts:addMinutesToHm",
+      "type": "function",
+      "name": "addMinutesToHm",
+      "filePath": "src/lib/core/parser/utils.ts",
+      "lineRange": [
+        78,
+        85
+      ],
+      "summary": "Handles add minutes to hm in utils.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/utils.ts:cleanCell",
+      "type": "function",
+      "name": "cleanCell",
+      "filePath": "src/lib/core/parser/utils.ts",
+      "lineRange": [
+        102,
+        107
+      ],
+      "summary": "Handles clean cell in utils.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/utils.ts:normalizeHeaderCell",
+      "type": "function",
+      "name": "normalizeHeaderCell",
+      "filePath": "src/lib/core/parser/utils.ts",
+      "lineRange": [
+        109,
+        111
+      ],
+      "summary": "Handles normalize header cell in utils.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/parser/utils.ts:extractTableRows",
+      "type": "function",
+      "name": "extractTableRows",
+      "filePath": "src/lib/core/parser/utils.ts",
+      "lineRange": [
+        113,
+        198
+      ],
+      "summary": "Handles extract table rows in utils.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib/core/resolver.ts:resolve",
+      "type": "function",
+      "name": "resolve",
+      "filePath": "src/lib/core/resolver.ts",
+      "lineRange": [
+        4,
+        27
+      ],
+      "summary": "Handles resolve in resolver.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/resolver.ts:isUnresolvable",
+      "type": "function",
+      "name": "isUnresolvable",
+      "filePath": "src/lib/core/resolver.ts",
+      "lineRange": [
+        29,
+        33
+      ],
+      "summary": "Handles is unresolvable in resolver.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "class:src/lib/core/resolver.ts:MixedSemesterError",
+      "type": "class",
+      "name": "MixedSemesterError",
+      "filePath": "src/lib/core/resolver.ts",
+      "lineRange": [
+        35,
+        44
+      ],
+      "summary": "Handles mixed semester error in resolver.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "class:src/lib/core/resolver.ts:UnresolvedError",
+      "type": "class",
+      "name": "UnresolvedError",
+      "filePath": "src/lib/core/resolver.ts",
+      "lineRange": [
+        46,
+        50
+      ],
+      "summary": "Handles unresolved error in resolver.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/resolver.ts:findIndex0AndWeek1",
+      "type": "function",
+      "name": "findIndex0AndWeek1",
+      "filePath": "src/lib/core/resolver.ts",
+      "lineRange": [
+        73,
+        92
+      ],
+      "summary": "Handles find index0 and week1 in resolver.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/resolver.ts:findMondayOfIndex0",
+      "type": "function",
+      "name": "findMondayOfIndex0",
+      "filePath": "src/lib/core/resolver.ts",
+      "lineRange": [
+        94,
+        134
+      ],
+      "summary": "Handles find monday of index0 in resolver.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/core/resolver.ts:dayOfWeek",
+      "type": "function",
+      "name": "dayOfWeek",
+      "filePath": "src/lib/core/resolver.ts",
+      "lineRange": [
+        136,
+        138
+      ],
+      "summary": "Handles day of week in resolver.ts.",
+      "tags": [
+        "parsers"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/google.ts:loadScript",
+      "type": "function",
+      "name": "loadScript",
+      "filePath": "src/lib/google.ts",
+      "lineRange": [
+        25,
+        42
+      ],
+      "summary": "Handles load script in google.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/google.ts:prepareGoogle",
+      "type": "function",
+      "name": "prepareGoogle",
+      "filePath": "src/lib/google.ts",
+      "lineRange": [
+        46,
+        73
+      ],
+      "summary": "Handles prepare google in google.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/google.ts:authorizeGoogle",
+      "type": "function",
+      "name": "authorizeGoogle",
+      "filePath": "src/lib/google.ts",
+      "lineRange": [
+        75,
+        108
+      ],
+      "summary": "Handles authorize google in google.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/google.ts:createCalendar",
+      "type": "function",
+      "name": "createCalendar",
+      "filePath": "src/lib/google.ts",
+      "lineRange": [
+        110,
+        117
+      ],
+      "summary": "Handles create calendar in google.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/google.ts:insertEvent",
+      "type": "function",
+      "name": "insertEvent",
+      "filePath": "src/lib/google.ts",
+      "lineRange": [
+        119,
+        126
+      ],
+      "summary": "Handles insert event in google.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/lib/google.ts:googleErrorMessage",
+      "type": "function",
+      "name": "googleErrorMessage",
+      "filePath": "src/lib/google.ts",
+      "lineRange": [
+        128,
+        134
+      ],
+      "summary": "Handles google error message in google.ts.",
+      "tags": [
+        "exports"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/+page.svelte:parsePaste",
+      "type": "function",
+      "name": "parsePaste",
+      "filePath": "src/routes/+page.svelte",
+      "lineRange": [
+        45,
+        56
+      ],
+      "summary": "Handles parse paste in +page.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/+page.svelte:combine",
+      "type": "function",
+      "name": "combine",
+      "filePath": "src/routes/+page.svelte",
+      "lineRange": [
+        58,
+        68
+      ],
+      "summary": "Handles combine in +page.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/+page.svelte:next",
+      "type": "function",
+      "name": "next",
+      "filePath": "src/routes/+page.svelte",
+      "lineRange": [
+        78,
+        101
+      ],
+      "summary": "Handles next in +page.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/GapiOutputSection.svelte:shuffle",
+      "type": "function",
+      "name": "shuffle",
+      "filePath": "src/routes/GapiOutputSection.svelte",
+      "lineRange": [
+        53,
+        55
+      ],
+      "summary": "Handles shuffle in GapiOutputSection.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/GapiOutputSection.svelte:prepare",
+      "type": "function",
+      "name": "prepare",
+      "filePath": "src/routes/GapiOutputSection.svelte",
+      "lineRange": [
+        57,
+        68
+      ],
+      "summary": "Handles prepare in GapiOutputSection.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/GapiOutputSection.svelte:addCalendar",
+      "type": "function",
+      "name": "addCalendar",
+      "filePath": "src/routes/GapiOutputSection.svelte",
+      "lineRange": [
+        74,
+        97
+      ],
+      "summary": "Handles add calendar in GapiOutputSection.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/GapiPreview.svelte:localParts",
+      "type": "function",
+      "name": "localParts",
+      "filePath": "src/routes/GapiPreview.svelte",
+      "lineRange": [
+        15,
+        19
+      ],
+      "summary": "Handles local parts in GapiPreview.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/IcalOutputSection.svelte:download",
+      "type": "function",
+      "name": "download",
+      "filePath": "src/routes/IcalOutputSection.svelte",
+      "lineRange": [
+        15,
+        24
+      ],
+      "summary": "Handles download in IcalOutputSection.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:normalizeLibPath",
+      "type": "function",
+      "name": "normalizeLibPath",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        158,
+        160
+      ],
+      "summary": "Handles normalize lib path in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:normalizeRoutePath",
+      "type": "function",
+      "name": "normalizeRoutePath",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        162,
+        166
+      ],
+      "summary": "Handles normalize route path in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:hasLibModule",
+      "type": "function",
+      "name": "hasLibModule",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        168,
+        170
+      ],
+      "summary": "Handles has lib module in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:hasRouteModule",
+      "type": "function",
+      "name": "hasRouteModule",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        172,
+        174
+      ],
+      "summary": "Handles has route module in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:loadLibModule",
+      "type": "function",
+      "name": "loadLibModule",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        176,
+        183
+      ],
+      "summary": "Handles load lib module in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:loadRouteModule",
+      "type": "function",
+      "name": "loadRouteModule",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        185,
+        192
+      ],
+      "summary": "Handles load route module in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:runInTimezone",
+      "type": "function",
+      "name": "runInTimezone",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        194,
+        223
+      ],
+      "summary": "Handles run in timezone in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:defaultCalendarName",
+      "type": "function",
+      "name": "defaultCalendarName",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        225,
+        228
+      ],
+      "summary": "Handles default calendar name in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:normalizeIcalVolatileFields",
+      "type": "function",
+      "name": "normalizeIcalVolatileFields",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        230,
+        240
+      ],
+      "summary": "Handles normalize ical volatile fields in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:unfoldIcal",
+      "type": "function",
+      "name": "unfoldIcal",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        242,
+        244
+      ],
+      "summary": "Handles unfold ical in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:rowMatchesCourse",
+      "type": "function",
+      "name": "rowMatchesCourse",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        246,
+        250
+      ],
+      "summary": "Handles row matches course in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:readWorkspaceText",
+      "type": "function",
+      "name": "readWorkspaceText",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        252,
+        254
+      ],
+      "summary": "Handles read workspace text in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:workspaceExists",
+      "type": "function",
+      "name": "workspaceExists",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        256,
+        258
+      ],
+      "summary": "Handles workspace exists in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:collectFilesRecursive",
+      "type": "function",
+      "name": "collectFilesRecursive",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        260,
+        276
+      ],
+      "summary": "Handles collect files recursive in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:makeSyntheticTkb2024",
+      "type": "function",
+      "name": "makeSyntheticTkb2024",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        971,
+        989
+      ],
+      "summary": "Handles make synthetic tkb2024 in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/e2e/fixtures.ts:makeSyntheticExam2024",
+      "type": "function",
+      "name": "makeSyntheticExam2024",
+      "filePath": "tests/e2e/fixtures.ts",
+      "lineRange": [
+        991,
+        1009
+      ],
+      "summary": "Handles make synthetic exam2024 in fixtures.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/unit/core.test.ts:toTabTable",
+      "type": "function",
+      "name": "toTabTable",
+      "filePath": "tests/unit/core.test.ts",
+      "lineRange": [
+        345,
+        358
+      ],
+      "summary": "Handles to tab table in core.test.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/unit/foundation.test.ts:makeTimerow",
+      "type": "function",
+      "name": "makeTimerow",
+      "filePath": "tests/unit/foundation.test.ts",
+      "lineRange": [
+        24,
+        35
+      ],
+      "summary": "Handles make timerow in foundation.test.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/unit/foundation.test.ts:makeExamRow",
+      "type": "function",
+      "name": "makeExamRow",
+      "filePath": "tests/unit/foundation.test.ts",
+      "lineRange": [
+        37,
+        55
+      ],
+      "summary": "Handles make exam row in foundation.test.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:tests/unit/foundation.test.ts:runResolverInFreshProcessWithTz",
+      "type": "function",
+      "name": "runResolverInFreshProcessWithTz",
+      "filePath": "tests/unit/foundation.test.ts",
+      "lineRange": [
+        57,
+        140
+      ],
+      "summary": "Handles run resolver in fresh process with tz in foundation.test.ts.",
+      "tags": [
+        "verification"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/lib/H2.svelte",
+      "target": "file:src/routes/+page.svelte",
+      "type": "renders",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/Key.svelte",
+      "target": "file:src/routes/+page.svelte",
+      "type": "renders",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/colors.ts",
+      "target": "function:src/lib/colors.ts:eventColor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/colors.ts",
+      "target": "function:src/lib/colors.ts:courseColorIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/colors.ts",
+      "target": "function:src/lib/colors.ts:randomColorIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/colors.ts",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "function:src/lib/core/detect.ts:normalizeHeaderCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "function:src/lib/core/detect.ts:detectKind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "function:src/lib/core/detect.ts:extractMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "function:src/lib/core/detect.ts:rowSignature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "function:src/lib/core/detect.ts:examSignature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "function:src/lib/core/detect.ts:isTruncatedPagination",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "function:src/lib/core/detect.ts:mergePaginationGroup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/detect.ts",
+      "target": "function:src/lib/core/detect.ts:mergeTimetables",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/gapi.ts",
+      "target": "file:src/lib/core/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/gapi.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/gapi.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/gapi.ts",
+      "target": "file:src/lib/core/formatter/ical.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/gapi.ts",
+      "target": "file:src/lib/core/formatter/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/gapi.ts",
+      "target": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/gapi.ts",
+      "target": "function:src/lib/core/formatter/gapi.ts:formatGapi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/gapi.ts",
+      "target": "function:src/lib/core/formatter/gapi.ts:formatGoogleCalendarTemplateUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "file:src/lib/core/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "file:src/lib/core/formatter/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "function:src/lib/core/formatter/ical.ts:escapeIcalText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "function:src/lib/core/formatter/ical.ts:formatIcal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "function:src/lib/core/formatter/ical.ts:formatTimerow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/ical.ts",
+      "target": "function:src/lib/core/formatter/ical.ts:icalRrule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "file:src/lib/core/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:dateOfIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:hcmDateToUtc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:examEndDateUtc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:extractParts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:formatUTC",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:formatHCM",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:formatHCMRfc3339",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:isBlankExamField",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamLocation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/formatter/utils.ts",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamDescription",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/parser/student.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/parser/student_2024.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/parser/lecturer.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/parser/postgrad.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/parser/exam_2024.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/detect.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/formatter/gapi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/formatter/ical.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/mod.ts",
+      "target": "file:src/lib/core/formatter/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/errors.ts",
+      "target": "class:src/lib/core/parser/errors.ts:ParseError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/errors.ts",
+      "target": "class:src/lib/core/parser/errors.ts:SemesterNotFoundError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/errors.ts",
+      "target": "class:src/lib/core/parser/errors.ts:NumOfColumnMismatchError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/errors.ts",
+      "target": "class:src/lib/core/parser/errors.ts:TableNotFoundError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/exam_2024.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/exam_2024.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/exam_2024.ts",
+      "target": "file:src/lib/core/parser/student_2024.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/exam_2024.ts",
+      "target": "file:src/lib/core/parser/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/exam_2024.ts",
+      "target": "function:src/lib/core/parser/exam_2024.ts:parseExam2024",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/lecturer.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/lecturer.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/lecturer.ts",
+      "target": "file:src/lib/core/parser/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/lecturer.ts",
+      "target": "function:src/lib/core/parser/lecturer.ts:parseLecturer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/lecturer.ts",
+      "target": "function:src/lib/core/parser/lecturer.ts:parseFromHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/postgrad.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/postgrad.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/postgrad.ts",
+      "target": "file:src/lib/core/parser/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/postgrad.ts",
+      "target": "function:src/lib/core/parser/postgrad.ts:parsePostgrad",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/postgrad.ts",
+      "target": "function:src/lib/core/parser/postgrad.ts:parseFromHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student.ts",
+      "target": "file:src/lib/core/parser/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student.ts",
+      "target": "function:src/lib/core/parser/student.ts:parseStudent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student.ts",
+      "target": "function:src/lib/core/parser/student.ts:parseFromHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student_2024.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student_2024.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student_2024.ts",
+      "target": "file:src/lib/core/parser/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student_2024.ts",
+      "target": "function:src/lib/core/parser/student_2024.ts:parseSemesterCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student_2024.ts",
+      "target": "function:src/lib/core/parser/student_2024.ts:isSelectMegaLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student_2024.ts",
+      "target": "function:src/lib/core/parser/student_2024.ts:extractSemester2024",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/student_2024.ts",
+      "target": "function:src/lib/core/parser/student_2024.ts:parseStudent2024",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/utils.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/utils.ts",
+      "target": "function:src/lib/core/parser/utils.ts:parseTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/utils.ts",
+      "target": "function:src/lib/core/parser/utils.ts:hmFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/utils.ts",
+      "target": "function:src/lib/core/parser/utils.ts:parseExamTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/utils.ts",
+      "target": "function:src/lib/core/parser/utils.ts:addMinutesToHm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/utils.ts",
+      "target": "function:src/lib/core/parser/utils.ts:cleanCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/utils.ts",
+      "target": "function:src/lib/core/parser/utils.ts:normalizeHeaderCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/parser/utils.ts",
+      "target": "function:src/lib/core/parser/utils.ts:extractTableRows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "file:src/lib/core/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "function:src/lib/core/resolver.ts:resolve",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "function:src/lib/core/resolver.ts:isUnresolvable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "class:src/lib/core/resolver.ts:MixedSemesterError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "class:src/lib/core/resolver.ts:UnresolvedError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "function:src/lib/core/resolver.ts:findIndex0AndWeek1",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "function:src/lib/core/resolver.ts:findMondayOfIndex0",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/core/resolver.ts",
+      "target": "function:src/lib/core/resolver.ts:dayOfWeek",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/google.ts",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/google.ts",
+      "target": "function:src/lib/google.ts:loadScript",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/google.ts",
+      "target": "function:src/lib/google.ts:prepareGoogle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/google.ts",
+      "target": "function:src/lib/google.ts:authorizeGoogle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/google.ts",
+      "target": "function:src/lib/google.ts:createCalendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/google.ts",
+      "target": "function:src/lib/google.ts:insertEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/google.ts",
+      "target": "function:src/lib/google.ts:googleErrorMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+layout.svelte",
+      "target": "file:src/app.postcss",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+layout.svelte",
+      "target": "file:src/routes/+page.svelte",
+      "type": "renders",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/lib/Key.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/lib/OkeeButton.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/routes/BKalendar.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/routes/ErrorReport.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/routes/GapiOutputSection.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/routes/IcalOutputSection.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/routes/KindSelect.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/routes/NameInput.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/routes/OutputSelect.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "file:src/routes/PasteArea.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "function:src/routes/+page.svelte:parsePaste",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "function:src/routes/+page.svelte:combine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "function:src/routes/+page.svelte:next",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/ErrorReport.svelte",
+      "target": "file:src/lib/H2.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/ErrorReport.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/ExamPreview.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/ExamPreview.svelte",
+      "target": "file:src/lib/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/ExamPreview.svelte",
+      "target": "file:src/lib/H2.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/lib/H2.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/lib/OkeeButton.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/lib/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/lib/google.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/routes/ExamPreview.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/routes/GapiPreview.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "function:src/routes/GapiOutputSection.svelte:shuffle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "function:src/routes/GapiOutputSection.svelte:prepare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "function:src/routes/GapiOutputSection.svelte:addCalendar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiPreview.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiPreview.svelte",
+      "target": "file:src/lib/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiPreview.svelte",
+      "target": "function:src/routes/GapiPreview.svelte:localParts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/IcalOutputSection.svelte",
+      "target": "file:src/lib/H2.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/IcalOutputSection.svelte",
+      "target": "file:src/lib/OkeeButton.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/IcalOutputSection.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/IcalOutputSection.svelte",
+      "target": "file:src/routes/ExamPreview.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/IcalOutputSection.svelte",
+      "target": "file:src/routes/GapiPreview.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/IcalOutputSection.svelte",
+      "target": "function:src/routes/IcalOutputSection.svelte:download",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/KindSelect.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/NameInput.svelte",
+      "target": "file:src/lib/H2.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/OutputSelect.svelte",
+      "target": "file:src/lib/H2.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:normalizeLibPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:normalizeRoutePath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:hasLibModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:hasRouteModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadLibModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadRouteModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:runInTimezone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:defaultCalendarName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:normalizeIcalVolatileFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:unfoldIcal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:rowMatchesCourse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:readWorkspaceText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:workspaceExists",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:collectFilesRecursive",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:makeSyntheticTkb2024",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/fixtures.ts",
+      "target": "function:tests/e2e/fixtures.ts:makeSyntheticExam2024",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "file:src/lib/core/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "file:tests/e2e/fixtures.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "file:src/lib/core/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "file:tests/e2e/fixtures.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "file:tests/e2e/fixtures.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "file:tests/e2e/fixtures.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/core.test.ts",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/core.test.ts",
+      "target": "function:tests/unit/core.test.ts:toTabTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "file:src/lib/core/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "file:src/lib/core/timetable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "file:src/lib/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "file:src/lib/core/parser/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "file:src/lib/core/parser/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:tests/unit/foundation.test.ts:makeTimerow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:tests/unit/foundation.test.ts:makeExamRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:tests/unit/foundation.test.ts:runResolverInFreshProcessWithTz",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/lib/core/detect.ts:detectKind",
+      "target": "function:src/lib/core/detect.ts:normalizeHeaderCell",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 117
+    },
+    {
+      "source": "function:src/lib/core/detect.ts:mergeTimetables",
+      "target": "function:src/lib/core/detect.ts:rowSignature",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 283
+    },
+    {
+      "source": "function:src/lib/core/detect.ts:mergeTimetables",
+      "target": "function:src/lib/core/detect.ts:examSignature",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 297
+    },
+    {
+      "source": "function:src/lib/core/detect.ts:mergeTimetables",
+      "target": "function:src/lib/core/detect.ts:mergePaginationGroup",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 323
+    },
+    {
+      "source": "function:src/lib/core/detect.ts:mergeTimetables",
+      "target": "function:src/lib/core/detect.ts:isTruncatedPagination",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 326
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "target": "function:src/lib/core/resolver.ts:isUnresolvable",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 49
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "target": "function:src/lib/core/formatter/ical.ts:icalRrule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 54
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "target": "function:src/lib/core/formatter/utils.ts:dateOfIndex",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 62
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "target": "function:src/lib/core/formatter/utils.ts:hcmDateToUtc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 89
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "target": "function:src/lib/core/formatter/utils.ts:examEndDateUtc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 90
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamSummary",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 92
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamDescription",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 93
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamLocation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 94
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGapi",
+      "target": "function:src/lib/core/formatter/gapi.ts:formatGapiSplit",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 114
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGoogleCalendarTemplateUrl",
+      "target": "function:src/lib/core/formatter/utils.ts:hcmDateToUtc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 119
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGoogleCalendarTemplateUrl",
+      "target": "function:src/lib/core/formatter/utils.ts:examEndDateUtc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 120
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGoogleCalendarTemplateUrl",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamSummary",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 123
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGoogleCalendarTemplateUrl",
+      "target": "function:src/lib/core/formatter/utils.ts:formatUTC",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 124
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGoogleCalendarTemplateUrl",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamLocation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 125
+    },
+    {
+      "source": "function:src/lib/core/formatter/gapi.ts:formatGoogleCalendarTemplateUrl",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamDescription",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 126
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatIcal",
+      "target": "function:src/lib/core/resolver.ts:isUnresolvable",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 53
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatIcal",
+      "target": "function:src/lib/core/formatter/ical.ts:formatTimerow",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 56
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatIcal",
+      "target": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 62
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatTimerow",
+      "target": "function:src/lib/core/formatter/ical.ts:icalRrule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 72
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatTimerow",
+      "target": "function:src/lib/core/formatter/utils.ts:formatUTC",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 79
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatTimerow",
+      "target": "function:src/lib/core/formatter/ical.ts:escapeIcalText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 81
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatTimerow",
+      "target": "function:src/lib/core/formatter/utils.ts:formatHCM",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 85
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatTimerow",
+      "target": "function:src/lib/core/formatter/utils.ts:dateOfIndex",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 86
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "target": "function:src/lib/core/formatter/utils.ts:hcmDateToUtc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 97
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "target": "function:src/lib/core/formatter/utils.ts:examEndDateUtc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 98
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "target": "function:src/lib/core/formatter/ical.ts:escapeIcalText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 99
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamSummary",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 99
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "target": "function:src/lib/core/formatter/utils.ts:formatUTC",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 117
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamDescription",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 119
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "target": "function:src/lib/core/formatter/utils.ts:formatExamLocation",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 120
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:formatExamVevent",
+      "target": "function:src/lib/core/formatter/utils.ts:formatHCM",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 121
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:icalRrule",
+      "target": "function:src/lib/core/formatter/utils.ts:formatUTC",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 145
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:icalRrule",
+      "target": "function:src/lib/core/formatter/utils.ts:dateOfIndex",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 145
+    },
+    {
+      "source": "function:src/lib/core/formatter/ical.ts:icalRrule",
+      "target": "function:src/lib/core/formatter/utils.ts:formatHCM",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 158
+    },
+    {
+      "source": "function:src/lib/core/formatter/utils.ts:examEndDateUtc",
+      "target": "function:src/lib/core/formatter/utils.ts:hcmDateToUtc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 54
+    },
+    {
+      "source": "function:src/lib/core/formatter/utils.ts:formatUTC",
+      "target": "function:src/lib/core/formatter/utils.ts:extractParts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 78
+    },
+    {
+      "source": "function:src/lib/core/formatter/utils.ts:formatHCM",
+      "target": "function:src/lib/core/formatter/utils.ts:extractParts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 88
+    },
+    {
+      "source": "function:src/lib/core/formatter/utils.ts:formatHCMRfc3339",
+      "target": "function:src/lib/core/formatter/utils.ts:extractParts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 93
+    },
+    {
+      "source": "function:src/lib/core/formatter/utils.ts:formatExamLocation",
+      "target": "function:src/lib/core/formatter/utils.ts:isBlankExamField",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 103
+    },
+    {
+      "source": "function:src/lib/core/formatter/utils.ts:formatExamDescription",
+      "target": "function:src/lib/core/formatter/utils.ts:isBlankExamField",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 117
+    },
+    {
+      "source": "function:src/lib/core/parser/exam_2024.ts:parseExam2024",
+      "target": "function:src/lib/core/parser/utils.ts:extractTableRows",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 23
+    },
+    {
+      "source": "function:src/lib/core/parser/exam_2024.ts:parseExam2024",
+      "target": "function:src/lib/core/parser/student_2024.ts:extractSemester2024",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 28
+    },
+    {
+      "source": "function:src/lib/core/parser/exam_2024.ts:parseExam2024",
+      "target": "function:src/lib/core/parser/student_2024.ts:parseSemesterCode",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 39
+    },
+    {
+      "source": "function:src/lib/core/parser/exam_2024.ts:parseExam2024",
+      "target": "function:src/lib/core/parser/utils.ts:parseExamTime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 69
+    },
+    {
+      "source": "function:src/lib/core/parser/exam_2024.ts:parseExam2024",
+      "target": "function:src/lib/core/parser/utils.ts:addMinutesToHm",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 75
+    },
+    {
+      "source": "function:src/lib/core/parser/lecturer.ts:parseLecturer",
+      "target": "function:src/lib/core/parser/lecturer.ts:parseFromHeader",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 33
+    },
+    {
+      "source": "function:src/lib/core/parser/lecturer.ts:parseFromHeader",
+      "target": "function:src/lib/core/parser/utils.ts:parseTime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 58
+    },
+    {
+      "source": "function:src/lib/core/parser/postgrad.ts:parsePostgrad",
+      "target": "function:src/lib/core/parser/postgrad.ts:parseFromHeader",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 28
+    },
+    {
+      "source": "function:src/lib/core/parser/postgrad.ts:parseFromHeader",
+      "target": "function:src/lib/core/parser/utils.ts:hmFrom",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 63
+    },
+    {
+      "source": "function:src/lib/core/parser/student.ts:parseStudent",
+      "target": "function:src/lib/core/parser/student.ts:parseFromHeader",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 19
+    },
+    {
+      "source": "function:src/lib/core/parser/student.ts:parseFromHeader",
+      "target": "function:src/lib/core/parser/utils.ts:parseTime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 51
+    },
+    {
+      "source": "function:src/lib/core/parser/student_2024.ts:extractSemester2024",
+      "target": "function:src/lib/core/parser/student_2024.ts:isSelectMegaLine",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 60
+    },
+    {
+      "source": "function:src/lib/core/parser/student_2024.ts:extractSemester2024",
+      "target": "function:src/lib/core/parser/student_2024.ts:parseSemesterCode",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 74
+    },
+    {
+      "source": "function:src/lib/core/parser/student_2024.ts:parseStudent2024",
+      "target": "function:src/lib/core/parser/utils.ts:extractTableRows",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 82
+    },
+    {
+      "source": "function:src/lib/core/parser/student_2024.ts:parseStudent2024",
+      "target": "function:src/lib/core/parser/student_2024.ts:extractSemester2024",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 87
+    },
+    {
+      "source": "function:src/lib/core/parser/student_2024.ts:parseStudent2024",
+      "target": "function:src/lib/core/parser/utils.ts:parseTime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 110
+    },
+    {
+      "source": "function:src/lib/core/parser/utils.ts:normalizeHeaderCell",
+      "target": "function:src/lib/core/parser/utils.ts:cleanCell",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 110
+    },
+    {
+      "source": "function:src/lib/core/parser/utils.ts:extractTableRows",
+      "target": "function:src/lib/core/parser/utils.ts:cleanCell",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 124
+    },
+    {
+      "source": "function:src/lib/core/parser/utils.ts:extractTableRows",
+      "target": "function:src/lib/core/parser/utils.ts:normalizeHeaderCell",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 163
+    },
+    {
+      "source": "function:src/lib/core/resolver.ts:resolve",
+      "target": "function:src/lib/core/resolver.ts:isUnresolvable",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 9
+    },
+    {
+      "source": "function:src/lib/core/resolver.ts:resolve",
+      "target": "function:src/lib/core/resolver.ts:findIndex0AndWeek1",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 12
+    },
+    {
+      "source": "function:src/lib/core/resolver.ts:resolve",
+      "target": "function:src/lib/core/resolver.ts:findMondayOfIndex0",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 13
+    },
+    {
+      "source": "function:src/lib/core/resolver.ts:findMondayOfIndex0",
+      "target": "function:src/lib/core/resolver.ts:dayOfWeek",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 108
+    },
+    {
+      "source": "function:src/lib/google.ts:prepareGoogle",
+      "target": "function:src/lib/google.ts:loadScript",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 48
+    },
+    {
+      "source": "function:src/routes/+page.svelte:parsePaste",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 49
+    },
+    {
+      "source": "function:src/routes/+page.svelte:combine",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 62
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "function:src/routes/+page.svelte:combine",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 71
+    },
+    {
+      "source": "function:src/routes/+page.svelte:next",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 85
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 43
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "function:src/routes/GapiOutputSection.svelte:shuffle",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 45
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "function:src/lib/colors.ts:courseColorIds",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 46
+    },
+    {
+      "source": "function:src/routes/GapiOutputSection.svelte:shuffle",
+      "target": "function:src/lib/colors.ts:randomColorIds",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 54
+    },
+    {
+      "source": "function:src/routes/GapiOutputSection.svelte:prepare",
+      "target": "function:src/lib/google.ts:prepareGoogle",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 61
+    },
+    {
+      "source": "function:src/routes/GapiOutputSection.svelte:prepare",
+      "target": "function:src/lib/google.ts:googleErrorMessage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 64
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "function:src/routes/GapiOutputSection.svelte:prepare",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 71
+    },
+    {
+      "source": "function:src/routes/GapiOutputSection.svelte:addCalendar",
+      "target": "function:src/lib/google.ts:authorizeGoogle",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 79
+    },
+    {
+      "source": "function:src/routes/GapiOutputSection.svelte:addCalendar",
+      "target": "function:src/lib/google.ts:createCalendar",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 85
+    },
+    {
+      "source": "function:src/routes/GapiOutputSection.svelte:addCalendar",
+      "target": "function:src/lib/google.ts:insertEvent",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 89
+    },
+    {
+      "source": "function:src/routes/GapiOutputSection.svelte:addCalendar",
+      "target": "function:src/lib/google.ts:googleErrorMessage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 93
+    },
+    {
+      "source": "file:src/routes/GapiPreview.svelte",
+      "target": "function:src/routes/GapiPreview.svelte:localParts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 22
+    },
+    {
+      "source": "file:src/routes/IcalOutputSection.svelte",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 12
+    },
+    {
+      "source": "function:src/routes/IcalOutputSection.svelte:download",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 16
+    },
+    {
+      "source": "function:tests/e2e/fixtures.ts:hasLibModule",
+      "target": "function:tests/e2e/fixtures.ts:normalizeLibPath",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 169
+    },
+    {
+      "source": "function:tests/e2e/fixtures.ts:hasRouteModule",
+      "target": "function:tests/e2e/fixtures.ts:normalizeRoutePath",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 173
+    },
+    {
+      "source": "function:tests/e2e/fixtures.ts:loadLibModule",
+      "target": "function:tests/e2e/fixtures.ts:normalizeLibPath",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 177
+    },
+    {
+      "source": "function:tests/e2e/fixtures.ts:loadRouteModule",
+      "target": "function:tests/e2e/fixtures.ts:normalizeRoutePath",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 186
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:readWorkspaceText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 54
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:workspaceExists",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 68
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadLibModule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 100
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:src/lib/core/resolver.ts:resolve",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 160
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:src/lib/core/resolver.ts:dayOfWeek",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 166
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:src/lib/core/resolver.ts:isUnresolvable",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 181
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:src/lib/core/resolver.ts:findIndex0AndWeek1",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 229
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:src/lib/core/resolver.ts:findMondayOfIndex0",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 230
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:rowMatchesCourse",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 248
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:runInTimezone",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 584
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:normalizeIcalVolatileFields",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 633
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:collectFilesRecursive",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 773
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadRouteModule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 785
+    },
+    {
+      "source": "file:tests/e2e/tier1_features.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:defaultCalendarName",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 833
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:collectFilesRecursive",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 45
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:readWorkspaceText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 48
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:workspaceExists",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 74
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadLibModule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 96
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:runInTimezone",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 161
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:src/lib/core/resolver.ts:resolve",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 179
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:normalizeIcalVolatileFields",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 220
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:src/lib/core/resolver.ts:dayOfWeek",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 248
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:makeSyntheticTkb2024",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 258
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:makeSyntheticExam2024",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 475
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:rowMatchesCourse",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 667
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:unfoldIcal",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 737
+    },
+    {
+      "source": "file:tests/e2e/tier2_boundaries.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadRouteModule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 970
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadLibModule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 28
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:unfoldIcal",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 56
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:runInTimezone",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 258
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:normalizeIcalVolatileFields",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 282
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:rowMatchesCourse",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 318
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:defaultCalendarName",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 339
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:makeSyntheticExam2024",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 349
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:src/lib/core/resolver.ts:resolve",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 394
+    },
+    {
+      "source": "file:tests/e2e/tier3_combinations.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:makeSyntheticTkb2024",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 399
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadLibModule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 30
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:defaultCalendarName",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 58
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:rowMatchesCourse",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 123
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:runInTimezone",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 196
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:normalizeIcalVolatileFields",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 231
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:readWorkspaceText",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 241
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:loadRouteModule",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 251
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:collectFilesRecursive",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 260
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:workspaceExists",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 268
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:tests/e2e/fixtures.ts:makeSyntheticExam2024",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 290
+    },
+    {
+      "source": "file:tests/e2e/tier4_scenarios.test.ts",
+      "target": "function:src/lib/core/resolver.ts:resolve",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 345
+    },
+    {
+      "source": "file:tests/unit/core.test.ts",
+      "target": "file:src/lib/core/mod.ts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 410
+    },
+    {
+      "source": "file:tests/unit/core.test.ts",
+      "target": "function:tests/unit/core.test.ts:toTabTable",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 482
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:tests/unit/foundation.test.ts:runResolverInFreshProcessWithTz",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 154
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:src/lib/core/resolver.ts:dayOfWeek",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 181
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:tests/unit/foundation.test.ts:makeTimerow",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 188
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:src/lib/core/resolver.ts:resolve",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 222
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:tests/unit/foundation.test.ts:makeExamRow",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 239
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:src/lib/core/resolver.ts:isUnresolvable",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 291
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:src/lib/core/parser/utils.ts:parseTime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 301
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:src/lib/core/parser/utils.ts:hmFrom",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 310
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:src/lib/core/parser/utils.ts:parseExamTime",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 320
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:src/lib/core/parser/utils.ts:addMinutesToHm",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 332
+    },
+    {
+      "source": "file:tests/unit/foundation.test.ts",
+      "target": "function:src/lib/core/parser/utils.ts:extractTableRows",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 413
+    }
+  ],
+  "layers": [
+    {
+      "id": "interface",
+      "name": "Browser interface",
+      "description": "Input controls, export previews, and static pages.",
+      "nodeIds": [
+        "file:src/app.d.ts",
+        "file:src/app.html",
+        "file:src/app.postcss",
+        "file:src/lib/H2.svelte",
+        "file:src/lib/Key.svelte",
+        "file:src/lib/OkeeButton.svelte",
+        "file:src/routes/+layout.svelte",
+        "file:src/routes/+layout.ts",
+        "file:src/routes/+page.svelte",
+        "file:src/routes/BKalendar.svelte",
+        "file:src/routes/ErrorReport.svelte",
+        "file:src/routes/ExamPreview.svelte",
+        "file:src/routes/GapiOutputSection.svelte",
+        "file:src/routes/GapiPreview.svelte",
+        "file:src/routes/IcalOutputSection.svelte",
+        "file:src/routes/KindSelect.svelte",
+        "file:src/routes/NameInput.svelte",
+        "file:src/routes/OutputSelect.svelte",
+        "file:src/routes/PasteArea.svelte",
+        "file:src/routes/privacy/+page.svelte",
+        "resource:static/favicon.svg"
+      ]
+    },
+    {
+      "id": "parsers",
+      "name": "Schedule handling",
+      "description": "Paste recognition, table parsing, merging, and week resolution.",
+      "nodeIds": [
+        "file:src/lib/core/constants.ts",
+        "file:src/lib/core/detect.ts",
+        "file:src/lib/core/mod.ts",
+        "file:src/lib/core/parser/errors.ts",
+        "file:src/lib/core/parser/exam_2024.ts",
+        "file:src/lib/core/parser/lecturer.ts",
+        "file:src/lib/core/parser/postgrad.ts",
+        "file:src/lib/core/parser/student.ts",
+        "file:src/lib/core/parser/student_2024.ts",
+        "file:src/lib/core/parser/utils.ts",
+        "file:src/lib/core/resolver.ts",
+        "file:src/lib/core/timetable.ts"
+      ]
+    },
+    {
+      "id": "exports",
+      "name": "Calendar export",
+      "description": "iCalendar and Google Calendar output, styling, and OAuth.",
+      "nodeIds": [
+        "file:src/lib/colors.ts",
+        "file:src/lib/core/formatter/gapi.ts",
+        "file:src/lib/core/formatter/ical.ts",
+        "file:src/lib/core/formatter/utils.ts",
+        "file:src/lib/google.ts"
+      ]
+    },
+    {
+      "id": "verification",
+      "name": "Verification",
+      "description": "Sample schedules and regression suites.",
+      "nodeIds": [
+        "file:tests/e2e/fixtures.ts",
+        "file:tests/e2e/tier1_features.test.ts",
+        "file:tests/e2e/tier2_boundaries.test.ts",
+        "file:tests/e2e/tier3_combinations.test.ts",
+        "file:tests/e2e/tier4_scenarios.test.ts",
+        "file:tests/unit/core.test.ts",
+        "file:tests/unit/foundation.test.ts"
+      ]
+    },
+    {
+      "id": "delivery",
+      "name": "Build and delivery",
+      "description": "Project configuration, licenses, and GitHub Pages workflow.",
+      "nodeIds": [
+        "pipeline:.github/workflows/main.yml",
+        "config:.gitignore",
+        "config:.npmrc",
+        "config:.prettierignore",
+        "config:.prettierrc",
+        "document:LICENSE-bkalendar.github.io",
+        "document:LICENSE-core",
+        "document:README.md",
+        "config:package.json",
+        "config:pnpm-workspace.yaml",
+        "config:postcss.config.cjs",
+        "config:svelte.config.js",
+        "config:tailwind.config.cjs",
+        "config:tsconfig.json",
+        "config:vite.config.js"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Paste and detect",
+      "description": "The home route accepts several blocks and lets the user override detection for each paste.",
+      "nodeIds": [
+        "document:README.md",
+        "file:src/routes/+page.svelte",
+        "file:src/lib/core/detect.ts"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Separate classes and exams",
+      "description": "Modern myBK classes resolve against ISO weeks. Exams keep their date and duration from the portal.",
+      "nodeIds": [
+        "file:src/lib/core/parser/student_2024.ts",
+        "file:src/lib/core/parser/exam_2024.ts",
+        "file:src/lib/core/resolver.ts"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Preview in local time",
+      "description": "The weekly grid and exam cards render separately. Google Calendar colors can follow the course code.",
+      "nodeIds": [
+        "file:src/routes/GapiPreview.svelte",
+        "file:src/routes/ExamPreview.svelte",
+        "file:src/lib/colors.ts"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Export a calendar",
+      "description": "The iCalendar formatter produces a local file. Google imports request access scoped to app-created calendars.",
+      "nodeIds": [
+        "file:src/routes/IcalOutputSection.svelte",
+        "file:src/lib/core/formatter/ical.ts",
+        "file:src/lib/core/formatter/gapi.ts",
+        "file:src/lib/google.ts"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "Verify and deploy",
+      "description": "Tests run before a static build is sent to GitHub Pages.",
+      "nodeIds": [
+        "file:tests/e2e/tier1_features.test.ts",
+        "file:tests/e2e/tier4_scenarios.test.ts",
+        "pipeline:.github/workflows/main.yml"
+      ]
+    }
+  ]
+}
