@@ -809,7 +809,6 @@ describe('Tier 1 — Feature Coverage (Features #1–#12)', () => {
 			const requiredComponents = [
 				'BKalendar.svelte',
 				'PasteArea.svelte',
-				'KindSelect.svelte',
 				'NameInput.svelte',
 				'OutputSelect.svelte',
 				'GapiPreview.svelte',

@@ -966,11 +966,12 @@ describe('Tier 2 — Boundary & Corner Cases (Features #1–#12)', () => {
 	});
 
 	describe('Feature #12: Compact UI, previews & /privacy boundaries', () => {
-		it('T2-F12-01: UI supports KindSelect options including tự động and lịch thi', async () => {
+		it('T2-F12-01: UI starts with a single paste field and detects the schedule type automatically', async () => {
 			const page = await loadRouteModule<SvelteComponentModule>('+page.svelte');
 			const { html } = page.default.render();
-			expect(html).toContain('Tự động');
-			expect(html).toContain('lịch thi');
+			expect(html.match(/<textarea\b/g)).toHaveLength(1);
+			expect(html).not.toContain('<select');
+			expect(html).not.toContain('thêm trang / lịch thi');
 		});
 
 		it('T2-F12-02: UI exposes color mode options tối giản, bảy sắc cầu vồng, theo môn học', async () => {

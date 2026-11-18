@@ -18,7 +18,6 @@
 	import ErrorReport from './ErrorReport.svelte';
 	import GapiOutputSection from './GapiOutputSection.svelte';
 	import IcalOutputSection from './IcalOutputSection.svelte';
-	import KindSelect, { labels } from './KindSelect.svelte';
 	import NameInput from './NameInput.svelte';
 	import OutputSelect from './OutputSelect.svelte';
 	import PasteArea from './PasteArea.svelte';
@@ -31,10 +30,9 @@
 		'sau đại học': parsePostgrad
 	};
 
-	type Paste = { raw: string; choice: ScheduleKind | 'auto' };
 	type ParsedPaste = { kind: ScheduleKind; timetable: Timetable };
-	const blankPaste = (): Paste => ({ raw: '', choice: 'auto' });
-	let pastes: Paste[] = [blankPaste()];
+	type Paste = { raw: string; parsed?: ParsedPaste; error?: Error };
+	let pastes: Paste[] = [{ raw: '' }];
 	let output: 'ical' | 'gapi' = 'gapi';
 	let exported: Timetable | undefined;
 	let semester: number | undefined;
@@ -42,20 +40,29 @@
 	let name = '';
 	let examReminders = true;
 
-	function parsePaste(paste: Paste): { parsed?: ParsedPaste; error?: Error } {
-		if (!paste.raw.trim()) return {};
+	function parsePaste(raw: string): Paste {
+		if (!raw.trim()) return { raw };
 		try {
-			const raw = paste.raw.replace(/\r\n?/g, '\n').normalize('NFC');
-			const kind = paste.choice === 'auto' ? detectKind(raw) : paste.choice;
-			const timetable = parsers[kind](raw);
-			timetable.metadata = { ...timetable.metadata, ...extractMeta(raw) };
-			return { parsed: { kind, timetable } };
+			const normalized = raw.replace(/\r\n?/g, '\n').normalize('NFC');
+			const kind = detectKind(normalized);
+			const timetable = parsers[kind](normalized);
+			timetable.metadata = { ...timetable.metadata, ...extractMeta(normalized) };
+			return { raw, parsed: { kind, timetable } };
 		} catch (error) {
-			return { error: error as Error };
+			return { raw, error: error as Error };
 		}
 	}
 
-	function combine(results: ReturnType<typeof parsePaste>[]) {
+	function updatePaste(index: number, raw: string) {
+		const updated = [...pastes];
+		updated[index] = parsePaste(raw);
+		const last = updated.findLastIndex((paste) => paste.raw !== '');
+		const visible = updated.slice(0, Math.max(1, last + 1));
+		if (visible.at(-1)?.parsed) visible.push({ raw: '' });
+		pastes = visible;
+	}
+
+	function combine(results: Paste[]) {
 		const parsed = results.flatMap(({ parsed }) => (parsed ? [parsed] : []));
 		if (!parsed.length || results.some(({ error }) => error)) return {};
 		try {
@@ -67,8 +74,7 @@
 		}
 	}
 
-	$: results = pastes.map(parsePaste);
-	$: combined = combine(results);
+	$: combined = combine(pastes);
 	$: semester = combined.timetable?.semester;
 	$: pagination = combined.timetable?.metadata?.pagination;
 	$: validSemester = /^\d{2}[123]$/.test(String(semester));
@@ -88,9 +94,9 @@
 				? 'THI'
 				: edited.exams?.length
 					? 'SV'
-					: results.some(({ parsed }) => parsed?.kind === 'giảng viên')
+					: pastes.some(({ parsed }) => parsed?.kind === 'giảng viên')
 						? 'GV'
-						: results.some(({ parsed }) => parsed?.kind === 'sau đại học')
+						: pastes.some(({ parsed }) => parsed?.kind === 'sau đại học')
 							? 'SDH'
 							: 'SV';
 			name = prefix + semester;
@@ -117,49 +123,37 @@
 		<Key>V</Key> lịch học hoặc lịch thi vào bên dưới.
 	</p>
 
-	{#each pastes as paste, index (paste)}
-		{@const result = results[index]}
+	{#each pastes as paste, index}
 		<div class="mt-4 space-y-2">
-			<div class="flex items-center justify-between gap-2">
-				<label for={'schedule-' + index} class="font-bold">Nội dung {index + 1}</label>
-				{#if pastes.length > 1}
-					<button
-						type="button"
-						class="text-sm text-rose-700 underline"
-						aria-label={'Xóa nội dung ' + (index + 1)}
-						on:click={() => (pastes = pastes.filter((item) => item !== paste))}>Xóa</button
-					>
-				{/if}
-			</div>
-			<PasteArea id={'schedule-' + index} bind:raw={paste.raw} />
-			<KindSelect bind:choice={paste.choice} />
-			{#if result?.parsed && paste.choice === 'auto'}
-				<p class="text-sm text-slate-600">{labels[result.parsed.kind]}</p>
-			{/if}
-			{#if result?.error}<ErrorReport error={result.error} />{/if}
+			<label for={'schedule-' + index} class="font-bold">
+				{index === 0 ? 'Nội dung' : 'Dán thêm trang hoặc lịch thi'}
+			</label>
+			<PasteArea
+				id={'schedule-' + index}
+				raw={paste.raw}
+				onInput={(raw) => updatePaste(index, raw)}
+			/>
+			{#if paste.error}<ErrorReport error={paste.error} />{/if}
 		</div>
-	{/each}
 
-	{#if combined.timetable?.metadata?.studentName}
-		<p class="mt-3 inline-block rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-900">
-			{combined.timetable.metadata.studentName}
-		</p>
-	{/if}
-	{#if pagination && ((pagination.shownFrom ?? 1) > 1 || pagination.shown < pagination.total)}
-		<p role="status" class="bg-amber-50 text-amber-900 mt-3 rounded p-2 text-sm">
-			Đã dán {pagination.shownFrom && pagination.shownFrom > 1
-				? pagination.shownFrom + '–'
-				: ''}{pagination.shown} / {pagination.total} dòng. Bạn có thể thêm các trang còn lại bên dưới.
-		</p>
-	{/if}
+		{#if index === 0}
+			{#if combined.timetable?.metadata?.studentName}
+				<p class="mt-3 inline-block rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-900">
+					{combined.timetable.metadata.studentName}
+				</p>
+			{/if}
+			{#if pagination && ((pagination.shownFrom ?? 1) > 1 || pagination.shown < pagination.total)}
+				<p role="status" class="bg-amber-50 text-amber-900 mt-3 rounded p-2 text-sm">
+					Đã dán {pagination.shownFrom && pagination.shownFrom > 1
+						? pagination.shownFrom + '–'
+						: ''}{pagination.shown} / {pagination.total} dòng. Bạn có thể thêm các trang còn lại bên dưới.
+				</p>
+			{/if}
+		{/if}
+	{/each}
 	{#if combined.error}<ErrorReport error={combined.error} />{/if}
 	{#if exportError}<ErrorReport error={exportError} />{/if}
 
-	<button
-		type="button"
-		class="mt-4 rounded border border-slate-300 px-3 py-1 text-sm text-marine-500"
-		on:click={() => (pastes = [...pastes, blankPaste()])}>＋ thêm trang / lịch thi</button
-	>
 	<div class="mt-4 flex items-center justify-end gap-3">
 		<label for="semester">học kỳ</label>
 		<input

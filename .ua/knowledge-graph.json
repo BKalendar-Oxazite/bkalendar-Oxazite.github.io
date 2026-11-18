@@ -14,8 +14,8 @@
       "Vitest"
     ],
     "description": "Converts HCMUT myBK class timetables and exam schedules into personal calendars.",
-    "analyzedAt": "2026-11-18T05:29:58.096Z",
-    "gitCommitHash": "7cc7a4a8aa2252d554f4fd537db86e59cb6d01b3"
+    "analyzedAt": "2026-11-18T06:10:37.687Z",
+    "gitCommitHash": "de80dc0075a8069b6533fdaa8ec6743bc8b73543"
   },
   "nodes": [
     {
@@ -486,17 +486,6 @@
       "name": "IcalOutputSection.svelte",
       "filePath": "src/routes/IcalOutputSection.svelte",
       "summary": "Downloads combined or split calendar files from browser memory.",
-      "tags": [
-        "interface"
-      ],
-      "complexity": "low"
-    },
-    {
-      "id": "file:src/routes/KindSelect.svelte",
-      "type": "file",
-      "name": "KindSelect.svelte",
-      "filePath": "src/routes/KindSelect.svelte",
-      "summary": "Supports browser interface through KindSelect.svelte.",
       "tags": [
         "interface"
       ],
@@ -1659,10 +1648,25 @@
       "name": "parsePaste",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        45,
-        56
+        43,
+        54
       ],
       "summary": "Handles parse paste in +page.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "function:src/routes/+page.svelte:updatePaste",
+      "type": "function",
+      "name": "updatePaste",
+      "filePath": "src/routes/+page.svelte",
+      "lineRange": [
+        56,
+        63
+      ],
+      "summary": "Handles update paste in +page.svelte.",
       "tags": [
         "interface"
       ],
@@ -1674,8 +1678,8 @@
       "name": "combine",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        58,
-        68
+        65,
+        75
       ],
       "summary": "Handles combine in +page.svelte.",
       "tags": [
@@ -1689,8 +1693,8 @@
       "name": "next",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        78,
-        101
+        84,
+        107
       ],
       "summary": "Handles next in +page.svelte.",
       "tags": [
@@ -2945,13 +2949,6 @@
     },
     {
       "source": "file:src/routes/+page.svelte",
-      "target": "file:src/routes/KindSelect.svelte",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1
-    },
-    {
-      "source": "file:src/routes/+page.svelte",
       "target": "file:src/routes/NameInput.svelte",
       "type": "imports",
       "direction": "forward",
@@ -2974,6 +2971,13 @@
     {
       "source": "file:src/routes/+page.svelte",
       "target": "function:src/routes/+page.svelte:parsePaste",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/+page.svelte",
+      "target": "function:src/routes/+page.svelte:updatePaste",
       "type": "contains",
       "direction": "forward",
       "weight": 1
@@ -3157,13 +3161,6 @@
       "source": "file:src/routes/IcalOutputSection.svelte",
       "target": "function:src/routes/IcalOutputSection.svelte:download",
       "type": "contains",
-      "direction": "forward",
-      "weight": 1
-    },
-    {
-      "source": "file:src/routes/KindSelect.svelte",
-      "target": "file:src/lib/core/mod.ts",
-      "type": "imports",
       "direction": "forward",
       "weight": 1
     },
@@ -4054,7 +4051,15 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 49
+      "line": 47
+    },
+    {
+      "source": "function:src/routes/+page.svelte:updatePaste",
+      "target": "function:src/routes/+page.svelte:parsePaste",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 1,
+      "line": 58
     },
     {
       "source": "function:src/routes/+page.svelte:combine",
@@ -4062,7 +4067,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 62
+      "line": 69
     },
     {
       "source": "file:src/routes/+page.svelte",
@@ -4070,7 +4075,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 71
+      "line": 77
     },
     {
       "source": "function:src/routes/+page.svelte:next",
@@ -4078,7 +4083,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 85
+      "line": 91
     },
     {
       "source": "file:src/routes/GapiOutputSection.svelte",
@@ -4334,7 +4339,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 833
+      "line": 832
     },
     {
       "source": "file:tests/e2e/tier2_boundaries.test.ts",
@@ -4726,7 +4731,6 @@
         "file:src/routes/GapiOutputSection.svelte",
         "file:src/routes/GapiPreview.svelte",
         "file:src/routes/IcalOutputSection.svelte",
-        "file:src/routes/KindSelect.svelte",
         "file:src/routes/NameInput.svelte",
         "file:src/routes/OutputSelect.svelte",
         "file:src/routes/PasteArea.svelte",

@@ -1,7 +1,8 @@
 # BKalendar x Oxazite
 
 Convert HCMUT myBK timetables and exam schedules into Google Calendar events or `.ics` files.
-Paste additional pages or an exam schedule to merge them into the same calendar.
+Paste a schedule directly. The app detects its type and opens another paste field for additional
+pages or an exam schedule.
 
 ## Local development
 
