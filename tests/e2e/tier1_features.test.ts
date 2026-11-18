@@ -788,7 +788,7 @@ describe('Tier 1 — Feature Coverage (Features #1–#12)', () => {
 			const options = selector.default.render({ output: 'gapi' }).html;
 			expect(html).toContain('max-w-xs');
 			expect(options).toContain('Lịch Google');
-			expect(options).toContain('Tệp .ics');
+			expect(options).toContain('File .ics');
 			expect(html).toContain('Oxazite');
 			expect(html).toContain('/privacy');
 		});

@@ -32,24 +32,21 @@
 	class="mt-3 grid gap-x-1"
 	aria-label="Thời khóa biểu theo giờ Việt Nam"
 	style:grid-template-columns="repeat({columns}, minmax(0, 1fr))"
-	style:grid-template-rows="auto repeat({rows}, minmax(1rem, 1fr))"
+	style:grid-template-rows="repeat({rows}, minmax(0, 1fr))"
 >
-	{#each days.slice(0, columns) as day, index (day)}
-		<div class="pb-1 text-center text-xs font-bold text-slate-600">
-			{index === 6 ? 'CN' : 'T' + (index + 2)}
-		</div>
-	{/each}
 	{#each Array(rows) as _, row}
 		<div
 			aria-hidden="true"
-			class:bg-slate-100={row % 2 === 0}
-			style:grid-row={row + 2}
+			class="-mx-2 {row % 2 === 1
+				? 'bg-transparent'
+				: 'border-b-[1.5px] border-dotted border-slate-200 bg-slate-100'}"
+			style:grid-row="{row + 1} / span 1"
 			style:grid-column="1 / span {columns}"
 		></div>
 	{/each}
 	{#each blocks as { event, day, start, end }}
 		<div
-			class="text-white my-0.5 overflow-hidden rounded px-1 py-0.5 text-xs italic shadow-sm"
+			class="my-0.5 rounded px-1 py-0.5 text-xs italic text-slate-50 shadow-md"
 			aria-label={event.summary}
 			title={event.summary +
 				' · ' +
@@ -59,10 +56,10 @@
 				' · ' +
 				event.location}
 			style:background-color={eventColor(event)}
-			style:grid-column={day + 1}
-			style:grid-row="{start - firstHour + 2} / {end - firstHour + 2}"
+			style:grid-column="{day + 1} / span 1"
+			style:grid-row="{start - firstHour + 1} / {end - firstHour + 1}"
 		>
-			<p class="line-clamp-3 break-words">{event.summary}</p>
+			<p class="line-clamp-3">{event.summary}</p>
 		</div>
 	{/each}
 </div>

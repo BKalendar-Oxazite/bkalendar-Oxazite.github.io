@@ -8,6 +8,7 @@
 	{id}
 	value={raw}
 	on:input={(event) => onInput(event.currentTarget.value)}
-	class="block h-28 w-full rounded border border-dashed border-slate-400 p-2 text-sm"
-	placeholder="Dán nội dung từ myBK"
+	aria-label={id === 'schedule-0' ? 'Nội dung' : 'Dán thêm trang hoặc lịch thi'}
+	placeholder="📋 dán vào đây"
+	class="mt-5 h-32 w-full rounded bg-transparent p-2 text-xs placeholder-slate-400 outline-dashed outline-[1.5px] outline-slate-200 placeholder:text-center placeholder:text-base placeholder:font-light placeholder:leading-[7rem] focus:outline-slate-500"
 ></textarea>

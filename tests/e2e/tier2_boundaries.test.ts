@@ -974,16 +974,17 @@ describe('Tier 2 — Boundary & Corner Cases (Features #1–#12)', () => {
 			expect(html).not.toContain('thêm trang / lịch thi');
 		});
 
-		it('T2-F12-02: UI exposes color mode options tối giản, bảy sắc cầu vồng, theo môn học', async () => {
+		it('T2-F12-02: UI restores the original color buttons and keeps the extra mode in a disclosure', async () => {
 			const output = await loadRouteModule<SvelteComponentModule>('GapiOutputSection.svelte');
 			const { html } = output.default.render({
 				timetable: { semester: 261, rows: [] },
 				name: 'SV261',
 				reminders: []
 			});
-			expect(html).toContain('tối giản');
-			expect(html).toContain('bảy sắc cầu vồng');
-			expect(html).toContain('theo môn học');
+			expect(html).toContain('🗿 tối giản');
+			expect(html).toContain('💅 bảy sắc cầu vồng');
+			expect(html).toContain('😎 xem trước');
+			expect(html.match(/<details[\s\S]*?<\/details>/)?.[0]).toContain('theo môn học');
 		});
 
 		it('T2-F12-03: UI includes Tomato exam highlight label or toggle', async () => {

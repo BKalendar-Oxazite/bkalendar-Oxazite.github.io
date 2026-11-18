@@ -12,6 +12,7 @@
 		type ScheduleKind,
 		type Timetable
 	} from '$lib/core/mod';
+	import { fly } from 'svelte/transition';
 	import Key from '$lib/Key.svelte';
 	import OkeeButton from '$lib/OkeeButton.svelte';
 	import BKalendar from './BKalendar.svelte';
@@ -38,7 +39,7 @@
 	let semester: number | undefined;
 	let exportError: Error | undefined;
 	let name = '';
-	let examReminders = true;
+	let reminders = [1440, 60];
 
 	function parsePaste(raw: string): Paste {
 		if (!raw.trim()) return { raw };
@@ -77,9 +78,9 @@
 	$: combined = combine(pastes);
 	$: semester = combined.timetable?.semester;
 	$: pagination = combined.timetable?.metadata?.pagination;
-	$: validSemester = /^\d{2}[123]$/.test(String(semester));
+	$: validSemester = /^\d+[123]$/.test(String(semester));
 	$: if (semester !== undefined) exportError = undefined;
-	$: reminders = examReminders ? [1440, 60] : [];
+	$: pageError = combined.error ?? exportError;
 
 	function next() {
 		const timetable = combined.timetable;
@@ -112,81 +113,91 @@
 </svelte:head>
 
 <BKalendar />
-<p class="mb-5 text-right"><i>vì bạn xứng đáng có một bộ lịch đẹp 🥰</i></p>
+<p class="text-right"><i>vì bạn xứng đáng có một bộ lịch đẹp 🌹</i></p>
+<div class="h-4" />
 
 {#if !exported}
-	<p>
-		Hãy <Key>Ctrl</Key>
-		<Key>A</Key>, <Key>Ctrl</Key>
-		<Key>C</Key> trên myBK rồi
-		<Key>Ctrl</Key>
-		<Key>V</Key> lịch học hoặc lịch thi vào bên dưới.
-	</p>
-
-	{#each pastes as paste, index}
-		<div class="mt-4 space-y-2">
-			<label for={'schedule-' + index} class="font-bold">
-				{index === 0 ? 'Nội dung' : 'Dán thêm trang hoặc lịch thi'}
-			</label>
+	<div out:fly={{ delay: 500, duration: 500, x: -100 }}>
+		<p>
+			hãy <Key>Ctrl</Key>
+			<Key>A</Key> rồi <Key>Ctrl</Key>
+			<Key>V</Key> thời khóa biểu hoặc lịch thi của bạn vào bên dưới, mình sẽ tự trích lịch của bạn ra
+			🪄
+		</p>
+		<div class="h-4" />
+		{#each pastes as paste, index}
+			{#if index > 0}
+				<label for={'schedule-' + index} class="mt-4 block"> Dán thêm trang hoặc lịch thi </label>
+			{/if}
 			<PasteArea
 				id={'schedule-' + index}
 				raw={paste.raw}
 				onInput={(raw) => updatePaste(index, raw)}
 			/>
-			{#if paste.error}<ErrorReport error={paste.error} />{/if}
+			{#if index === 0}
+				{#if combined.timetable?.metadata?.studentName}
+					<p class="mt-3 inline-block rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-900">
+						{combined.timetable.metadata.studentName}
+					</p>
+				{/if}
+				{#if pagination && ((pagination.shownFrom ?? 1) > 1 || pagination.shown < pagination.total)}
+					<p role="status" class="bg-amber-50 text-amber-900 mt-3 rounded p-2 text-sm">
+						Đã dán {pagination.shownFrom && pagination.shownFrom > 1
+							? pagination.shownFrom + '–'
+							: ''}{pagination.shown} / {pagination.total} dòng. Bạn có thể thêm các trang còn lại bên
+						dưới.
+					</p>
+				{/if}
+			{/if}
+		{/each}
+		<div class="h-4" />
+		<div class="flex items-center justify-end space-x-4">
+			<label for="semester" class="flex-shrink-0">học kỳ</label>
+			<input
+				id="semester"
+				type="number"
+				class="inline w-16 outline-dashed outline-[1.5px] outline-slate-200 disabled:cursor-not-allowed disabled:bg-slate-100"
+				disabled={!combined.timetable}
+				bind:value={semester}
+			/>
 		</div>
-
-		{#if index === 0}
-			{#if combined.timetable?.metadata?.studentName}
-				<p class="mt-3 inline-block rounded-full bg-sky-100 px-3 py-1 text-sm text-sky-900">
-					{combined.timetable.metadata.studentName}
-				</p>
+		<div class="h-4" />
+		<div class="flex justify-end">
+			<OkeeButton variant="navy" disabled={!combined.timetable || !validSemester} on:click={next} />
+		</div>
+		{#each pastes as paste}
+			{#if paste.error}
+				<div class="h-4" />
+				<ErrorReport error={paste.error} />
 			{/if}
-			{#if pagination && ((pagination.shownFrom ?? 1) > 1 || pagination.shown < pagination.total)}
-				<p role="status" class="bg-amber-50 text-amber-900 mt-3 rounded p-2 text-sm">
-					Đã dán {pagination.shownFrom && pagination.shownFrom > 1
-						? pagination.shownFrom + '–'
-						: ''}{pagination.shown} / {pagination.total} dòng. Bạn có thể thêm các trang còn lại bên dưới.
-				</p>
-			{/if}
+		{/each}
+		{#if pageError}
+			<div class="h-4" />
+			<ErrorReport error={pageError} />
 		{/if}
-	{/each}
-	{#if combined.error}<ErrorReport error={combined.error} />{/if}
-	{#if exportError}<ErrorReport error={exportError} />{/if}
-
-	<div class="mt-4 flex items-center justify-end gap-3">
-		<label for="semester">học kỳ</label>
-		<input
-			id="semester"
-			type="number"
-			bind:value={semester}
-			disabled={!combined.timetable}
-			class="w-20 rounded border border-dashed border-slate-400 p-1 disabled:bg-slate-100"
-		/>
-		<OkeeButton variant="navy" disabled={!combined.timetable || !validSemester} on:click={next} />
+		{#if semester !== undefined && !validSemester}
+			<div class="h-4" />
+			<ErrorReport error={new Error('mã học kỳ sai định dạng. ví dụ mã đúng: 231, 232, 233.')} />
+		{/if}
+		<div class="h-4" />
 	</div>
-	{#if combined.timetable && !validSemester}
-		<p class="mt-2 text-sm text-rose-700">Mã học kỳ có ba chữ số, ví dụ 261, 262 hoặc 263.</p>
-	{/if}
 {:else}
-	<button
-		type="button"
-		class="mb-4 text-sm text-marine-500 underline"
-		on:click={() => (exported = undefined)}
-	>
-		← sửa nội dung đã dán
-	</button>
-	<NameInput bind:name />
-	<div class="mt-4"><OutputSelect bind:output /></div>
-	{#if exported.exams?.length}
-		<label class="mt-4 flex items-start gap-2 text-sm">
-			<input type="checkbox" class="mt-1" bind:checked={examReminders} />
-			Nhắc lịch thi trước 1 ngày và 60 phút
-		</label>
-	{/if}
-	{#if output === 'gapi'}
-		<GapiOutputSection timetable={exported} {name} {reminders} />
-	{:else}
-		<IcalOutputSection timetable={exported} {name} {reminders} />
-	{/if}
+	<div in:fly={{ delay: 1000, x: 100 }}>
+		<NameInput bind:name />
+		<div class="h-4" />
+		<OutputSelect bind:output />
+		<div class="h-4" />
+		{#if output === 'gapi'}
+			<GapiOutputSection timetable={exported} {name} bind:reminders />
+		{:else}
+			<IcalOutputSection timetable={exported} {name} bind:reminders />
+		{/if}
+		<button
+			type="button"
+			class="mt-4 text-sm text-marine-500 underline"
+			on:click={() => (exported = undefined)}
+		>
+			← sửa nội dung đã dán
+		</button>
+	</div>
 {/if}

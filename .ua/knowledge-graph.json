@@ -14,8 +14,8 @@
       "Vitest"
     ],
     "description": "Converts HCMUT myBK class timetables and exam schedules into personal calendars.",
-    "analyzedAt": "2026-11-18T06:10:37.687Z",
-    "gitCommitHash": "de80dc0075a8069b6533fdaa8ec6743bc8b73543"
+    "analyzedAt": "2026-11-18T06:46:42.346Z",
+    "gitCommitHash": "860794527ca3eec0413196be4bb4bded8ce8d8f3"
   },
   "nodes": [
     {
@@ -200,6 +200,17 @@
       "name": "OkeeButton.svelte",
       "filePath": "src/lib/OkeeButton.svelte",
       "summary": "Supports browser interface through OkeeButton.svelte.",
+      "tags": [
+        "interface"
+      ],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/lib/RadioButton.svelte",
+      "type": "file",
+      "name": "RadioButton.svelte",
+      "filePath": "src/lib/RadioButton.svelte",
+      "summary": "Supports browser interface through RadioButton.svelte.",
       "tags": [
         "interface"
       ],
@@ -1648,8 +1659,8 @@
       "name": "parsePaste",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        43,
-        54
+        44,
+        55
       ],
       "summary": "Handles parse paste in +page.svelte.",
       "tags": [
@@ -1663,8 +1674,8 @@
       "name": "updatePaste",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        56,
-        63
+        57,
+        64
       ],
       "summary": "Handles update paste in +page.svelte.",
       "tags": [
@@ -1678,8 +1689,8 @@
       "name": "combine",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        65,
-        75
+        66,
+        76
       ],
       "summary": "Handles combine in +page.svelte.",
       "tags": [
@@ -1693,8 +1704,8 @@
       "name": "next",
       "filePath": "src/routes/+page.svelte",
       "lineRange": [
-        84,
-        107
+        85,
+        108
       ],
       "summary": "Handles next in +page.svelte.",
       "tags": [
@@ -1708,8 +1719,8 @@
       "name": "shuffle",
       "filePath": "src/routes/GapiOutputSection.svelte",
       "lineRange": [
-        53,
-        55
+        49,
+        51
       ],
       "summary": "Handles shuffle in GapiOutputSection.svelte.",
       "tags": [
@@ -1723,8 +1734,8 @@
       "name": "prepare",
       "filePath": "src/routes/GapiOutputSection.svelte",
       "lineRange": [
-        57,
-        68
+        53,
+        64
       ],
       "summary": "Handles prepare in GapiOutputSection.svelte.",
       "tags": [
@@ -1738,8 +1749,8 @@
       "name": "addCalendar",
       "filePath": "src/routes/GapiOutputSection.svelte",
       "lineRange": [
-        74,
-        97
+        70,
+        93
       ],
       "summary": "Handles add calendar in GapiOutputSection.svelte.",
       "tags": [
@@ -2088,6 +2099,13 @@
     },
     {
       "source": "file:src/lib/Key.svelte",
+      "target": "file:src/routes/+page.svelte",
+      "type": "renders",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/RadioButton.svelte",
       "target": "file:src/routes/+page.svelte",
       "type": "renders",
       "direction": "forward",
@@ -3047,6 +3065,13 @@
     },
     {
       "source": "file:src/routes/GapiOutputSection.svelte",
+      "target": "file:src/lib/RadioButton.svelte",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/routes/GapiOutputSection.svelte",
       "target": "file:src/lib/colors.ts",
       "type": "imports",
       "direction": "forward",
@@ -3146,13 +3171,6 @@
     {
       "source": "file:src/routes/IcalOutputSection.svelte",
       "target": "file:src/routes/ExamPreview.svelte",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1
-    },
-    {
-      "source": "file:src/routes/IcalOutputSection.svelte",
-      "target": "file:src/routes/GapiPreview.svelte",
       "type": "imports",
       "direction": "forward",
       "weight": 1
@@ -4051,7 +4069,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 47
+      "line": 48
     },
     {
       "source": "function:src/routes/+page.svelte:updatePaste",
@@ -4059,7 +4077,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 58
+      "line": 59
     },
     {
       "source": "function:src/routes/+page.svelte:combine",
@@ -4067,7 +4085,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 69
+      "line": 70
     },
     {
       "source": "file:src/routes/+page.svelte",
@@ -4075,7 +4093,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 77
+      "line": 78
     },
     {
       "source": "function:src/routes/+page.svelte:next",
@@ -4083,7 +4101,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 91
+      "line": 92
     },
     {
       "source": "file:src/routes/GapiOutputSection.svelte",
@@ -4091,7 +4109,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 43
+      "line": 39
     },
     {
       "source": "file:src/routes/GapiOutputSection.svelte",
@@ -4099,7 +4117,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 45
+      "line": 41
     },
     {
       "source": "file:src/routes/GapiOutputSection.svelte",
@@ -4107,7 +4125,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 46
+      "line": 42
     },
     {
       "source": "function:src/routes/GapiOutputSection.svelte:shuffle",
@@ -4115,7 +4133,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 54
+      "line": 50
     },
     {
       "source": "function:src/routes/GapiOutputSection.svelte:prepare",
@@ -4123,7 +4141,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 61
+      "line": 57
     },
     {
       "source": "function:src/routes/GapiOutputSection.svelte:prepare",
@@ -4131,7 +4149,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 64
+      "line": 60
     },
     {
       "source": "file:src/routes/GapiOutputSection.svelte",
@@ -4139,7 +4157,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 71
+      "line": 67
     },
     {
       "source": "function:src/routes/GapiOutputSection.svelte:addCalendar",
@@ -4147,7 +4165,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 79
+      "line": 75
     },
     {
       "source": "function:src/routes/GapiOutputSection.svelte:addCalendar",
@@ -4155,7 +4173,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 85
+      "line": 81
     },
     {
       "source": "function:src/routes/GapiOutputSection.svelte:addCalendar",
@@ -4163,7 +4181,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 89
+      "line": 85
     },
     {
       "source": "function:src/routes/GapiOutputSection.svelte:addCalendar",
@@ -4171,7 +4189,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 93
+      "line": 89
     },
     {
       "source": "file:src/routes/GapiPreview.svelte",
@@ -4187,7 +4205,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 12
+      "line": 11
     },
     {
       "source": "function:src/routes/IcalOutputSection.svelte:download",
@@ -4579,7 +4597,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 260
+      "line": 263
     },
     {
       "source": "file:tests/e2e/tier4_scenarios.test.ts",
@@ -4587,7 +4605,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 268
+      "line": 271
     },
     {
       "source": "file:tests/e2e/tier4_scenarios.test.ts",
@@ -4595,7 +4613,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 290
+      "line": 294
     },
     {
       "source": "file:tests/e2e/tier4_scenarios.test.ts",
@@ -4603,7 +4621,7 @@
       "type": "calls",
       "direction": "forward",
       "weight": 1,
-      "line": 345
+      "line": 349
     },
     {
       "source": "file:tests/unit/core.test.ts",
@@ -4722,6 +4740,7 @@
         "file:src/lib/H2.svelte",
         "file:src/lib/Key.svelte",
         "file:src/lib/OkeeButton.svelte",
+        "file:src/lib/RadioButton.svelte",
         "file:src/routes/+layout.svelte",
         "file:src/routes/+layout.ts",
         "file:src/routes/+page.svelte",

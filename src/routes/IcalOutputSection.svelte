@@ -3,13 +3,13 @@
 	import OkeeButton from '$lib/OkeeButton.svelte';
 	import { formatGapiSplit, formatIcal, type IcalOptions, type Timetable } from '$lib/core/mod';
 	import ExamPreview from './ExamPreview.svelte';
-	import GapiPreview from './GapiPreview.svelte';
 
 	export let timetable: Timetable;
 	export let name: string;
 	export let reminders: number[];
 
 	$: preview = formatGapiSplit(timetable, { examRemindersMinutes: reminders });
+	$: calendarText = formatIcal(timetable, { examRemindersMinutes: reminders });
 	$: fallbackName = (preview.classEvents.length ? 'SV' : 'THI') + timetable.semester;
 
 	function download(scope: NonNullable<IcalOptions['scope']>, filename: string) {
@@ -24,25 +24,27 @@
 	}
 </script>
 
-<H2>📅 xem trước</H2>
-{#if preview.classEvents.length}<GapiPreview events={preview.classEvents} />{/if}
-{#if timetable.exams?.length}<ExamPreview
-		exams={timetable.exams}
-		events={preview.examEvents}
-	/>{/if}
-<div class="mt-4 flex flex-wrap justify-center gap-2">
+<H2>😎 xem trước</H2>
+<pre class="overflow-x-auto">{calendarText}</pre>
+{#if timetable.exams?.length}
+	<ExamPreview exams={timetable.exams} events={preview.examEvents} bind:reminders />
+{/if}
+<div class="h-4" />
+<div class="flex justify-center">
 	<OkeeButton variant="navy" on:click={() => download('all', name.trim() || fallbackName)}>
-		↓ Tải .ics
+		👉 download
 	</OkeeButton>
-	{#if preview.classEvents.length && preview.examEvents.length}
+</div>
+{#if preview.classEvents.length && preview.examEvents.length}
+	<div class="mt-3 flex justify-center gap-2">
 		<OkeeButton variant="slate" on:click={() => download('classes', 'SV' + timetable.semester)}>
 			TKB (.ics)
 		</OkeeButton>
 		<OkeeButton variant="slate" on:click={() => download('exams', 'THI' + timetable.semester)}>
 			Lịch thi (.ics)
 		</OkeeButton>
-	{/if}
-</div>
+	</div>
+{/if}
 <p class="mt-3 text-center text-sm">
 	<a
 		class="text-marine-500 underline"

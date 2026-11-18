@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import H2 from '$lib/H2.svelte';
 	import OkeeButton from '$lib/OkeeButton.svelte';
+	import RadioButton from '$lib/RadioButton.svelte';
 	import {
 		courseColorIds,
 		EXAM_TOMATO_COLOR_ID,
@@ -23,11 +24,6 @@
 	export let name: string;
 	export let reminders: number[];
 
-	const modes: { value: ColorMode; label: string }[] = [
-		{ value: 'mono', label: '⚪ tối giản' },
-		{ value: 'random', label: '🌈 bảy sắc cầu vồng' },
-		{ value: 'by-course', label: '🎨 theo môn học' }
-	];
 	let mode: ColorMode = 'random';
 	let examHighlight = false;
 	let ready = false;
@@ -98,34 +94,30 @@
 </script>
 
 <H2>🎨 màu sắc</H2>
-<fieldset class="mt-2 grid gap-1.5" disabled={busy || !!calendarId}>
-	<legend class="text-sm text-slate-700">bạn là người chơi hệ</legend>
-	{#each modes as option (option.value)}
-		<label class="flex items-center gap-2 rounded bg-slate-50 px-2 py-1 text-sm">
-			<input type="radio" bind:group={mode} value={option.value} />
-			{option.label}
-		</label>
-	{/each}
-	{#if examEvents.length}
-		<label class="flex items-center gap-2 px-2 py-1 text-sm">
-			<input type="checkbox" bind:checked={examHighlight} /> 🔴 tô đỏ lịch thi
-		</label>
-	{/if}
+<fieldset disabled={busy || !!calendarId}>
+	<legend>bạn là người chơi hệ:</legend>
+	<div class="mt-4 flex justify-around text-base">
+		<RadioButton bind:group={mode} value="mono" variant="slate">🗿 tối giản</RadioButton>
+		<RadioButton bind:group={mode} value="random" variant="rose">💅 bảy sắc cầu vồng</RadioButton>
+	</div>
 </fieldset>
 
+<H2>😎 xem trước</H2>
+<p>cái lịch sẽ nhìn giống giống thế này:</p>
 {#if classEvents.length}
-	<H2>📅 xem trước</H2>
 	<GapiPreview events={classEvents} />
 {/if}
 {#if timetable.exams?.length}
-	<ExamPreview exams={timetable.exams} events={examEvents} />
+	<ExamPreview exams={timetable.exams} events={examEvents} bind:reminders />
 {/if}
 
-<div class="mt-4 flex flex-wrap justify-center gap-2">
+<div class="h-4" />
+<div class="flex justify-center">
 	{#if mode === 'random' && !calendarId}
 		<OkeeButton disabled={busy} variant="slate" on:click={() => shuffle(events.length)}>
 			🎲 màu khác ik
 		</OkeeButton>
+		<div class="w-4" />
 	{/if}
 	{#if !ready && !preparing}
 		<OkeeButton variant="navy" on:click={prepare}>Thử tải lại Lịch Google</OkeeButton>
@@ -135,13 +127,7 @@
 			variant="navy"
 			on:click={addCalendar}
 		>
-			{preparing
-				? 'Đang tải Lịch Google…'
-				: busy
-					? 'Đang thêm…'
-					: calendarId && !complete
-						? 'Thử lại'
-						: '📆 okee'}
+			{busy ? '🏃‍♂️ đang thêm...' : calendarId && !complete ? 'Thử lại' : '👌 okee'}
 		</OkeeButton>
 	{/if}
 </div>
@@ -155,3 +141,20 @@
 		{#if calendarId}Đã thêm {inserted} / {upload.length} sự kiện vào lịch mới.{/if}
 	</p>
 {/if}
+
+<details class="mt-4 text-sm">
+	<summary class="cursor-pointer">tùy chọn màu</summary>
+	<fieldset
+		class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2"
+		disabled={busy || !!calendarId}
+	>
+		<label class="flex items-center gap-2">
+			<input type="radio" bind:group={mode} value="by-course" /> 🎨 theo môn học
+		</label>
+		{#if examEvents.length}
+			<label class="flex items-center gap-2">
+				<input type="checkbox" bind:checked={examHighlight} /> 🔴 tô đỏ lịch thi
+			</label>
+		{/if}
+	</fieldset>
+</details>

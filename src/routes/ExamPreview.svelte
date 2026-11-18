@@ -10,6 +10,7 @@
 
 	export let exams: ExamRow[];
 	export let events: GapiEvent[];
+	export let reminders: number[];
 
 	const date = new Intl.DateTimeFormat('vi-VN', {
 		timeZone: ASIA_HO_CHI_MINH,
@@ -30,6 +31,15 @@
 </script>
 
 <H2>Lịch thi ({cards.length})</H2>
+<label class="flex items-start gap-2 text-sm">
+	<input
+		type="checkbox"
+		class="mt-1"
+		checked={reminders.length > 0}
+		on:change={(event) => (reminders = event.currentTarget.checked ? [1440, 60] : [])}
+	/>
+	Nhắc lịch thi trước 1 ngày và 60 phút
+</label>
 <ul class="mt-3 space-y-2">
 	{#each cards as { exam, event }}
 		<li
